@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio site for Oleksandr Melnychuk, junior infrastructure and DevOps trainee in Liège, Belgium.">
+    <meta property="og:title" content="Oleksandr Melnychuk | DevOps &amp; Systems Enthusiast">
+    <meta property="og:description" content="Junior DevOps trainee focused on Linux, virtualization, and automation with bilingual English/French content.">
+    <meta property="og:type" content="website">
+    <title>Oleksandr Melnychuk | DevOps & Systems Enthusiast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+    <div class="language-bar" role="group" aria-label="Select language">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+    <header>
+        <div class="hero-card">
+            <span class="eyebrow" data-i18n="heroEyebrow"></span>
+            <p class="mini-bio" data-i18n="heroSubtitle"></p>
+            <h1 data-i18n="heroTitle"></h1>
+            <p class="lead" data-i18n="heroLead"></p>
+            <div class="cta">
+                <a class="btn primary" href="mailto:olexmel@olexhm.dev" data-i18n="ctaCollaborate"></a>
+                <a class="btn" href="#college-projects" data-i18n="ctaProjects"></a>
+            </div>
+            <div class="stat-grid" style="margin-top:20px;">
+                <div class="stat">
+                    <div class="value">2019–2023</div>
+                    <div class="label" data-i18n="stat1Label"></div>
+                </div>
+                <div class="stat">
+                    <div class="value">2023–2025</div>
+                    <div class="label" data-i18n="stat2Label"></div>
+                </div>
+                <div class="stat">
+                    <div class="value">2025–2026</div>
+                    <div class="label" data-i18n="stat3Label"></div>
+                </div>
+                <div class="stat">
+                    <div class="value">4</div>
+                    <div class="label" data-i18n="stat4Label"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-card">
+<pre class="ascii-banner">
+ ______   __       ______   __     __   ___   ___   ___ __ __
+/_____/\ /_/\     /_____/\ /__/\ /__/\ /__/\ /__/\ /__//_//_/\
+\:::_ \ \\:\ \    \::::_\/_\ \::\\:.\ \\::\ \\  \ \\::\| \| \ \
+ \:\ \ \ \\:\ \    \:\/___/\\_\::_\:_\/ \::\/_\ .\ \\:.      \ \
+  \:\ \ \ \\:\ \____\::___\/_ _\/__\_\_/\\:: ___::\ \\:.\-/\  \ \
+   \:\_\ \ \\:\/___/\\:\____/\\ \ \ \::\ \\: \ \\::\ \\. \  \  \ \
+    \_____\/ \_____\/ \_____\/ \_\/  \__\/ \__\/ \::\/ \__\/ \__\/
+</pre>
+            <h3 data-i18n="architectureTitle"></h3>
+            <code data-i18n="architectureCode"></code>
+            <div class="tag-list">
+                <span class="tag">Linux</span>
+                <span class="tag">Bash</span>
+                <span class="tag">Python</span>
+                <span class="tag">Ansible</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Terraform basics</span>
+            </div>
+        </div>
+    </header>
+
+    <h2 class="section-title" id="about" data-i18n="aboutTitle"></h2>
+    <div class="card about-card">
+        <p class="lead" data-i18n="aboutLead"></p>
+        <ul class="about-list">
+            <li data-i18n="aboutBullet1"></li>
+            <li data-i18n="aboutBullet2"></li>
+            <li data-i18n="aboutBullet3"></li>
+        </ul>
+    </div>
+
+    <h2 class="section-title" id="college-projects" data-i18n="collegeProjectsTitle"></h2>
+    <div class="grid">
+        <article class="card">
+            <h3 data-i18n="collegeProject1Title"></h3>
+            <p class="lead" data-i18n="collegeProject1Lead"></p>
+            <ul data-i18n-list="collegeProject1List"></ul>
+            <div class="tag-list">
+                <span class="tag">SQL</span>
+                <span class="tag">Triggers</span>
+                <span class="tag">DBMS</span>
+                <span class="tag">Reporting</span>
+            </div>
+        </article>
+    </div>
+
+    <h2 class="section-title" data-i18n="universityProjectsTitle"></h2>
+    <div class="grid">
+        <article class="card">
+            <h3 data-i18n="universityProject1Title"></h3>
+            <p class="lead" data-i18n="universityProject1Lead"></p>
+            <ul data-i18n-list="universityProject1List"></ul>
+            <div class="tag-list">
+                <span class="tag">SDLC</span>
+                <span class="tag">UML</span>
+                <span class="tag">Documentation</span>
+                <span class="tag">Git</span>
+            </div>
+        </article>
+        <article class="card">
+            <h3 data-i18n="universityProject2Title"></h3>
+            <p class="lead" data-i18n="universityProject2Lead"></p>
+            <ul data-i18n-list="universityProject2List"></ul>
+            <div class="tag-list">
+                <span class="tag">Frontend</span>
+                <span class="tag">Backend</span>
+                <span class="tag">UI/UX</span>
+                <span class="tag">Auth</span>
+            </div>
+        </article>
+        <article class="card">
+            <h3 data-i18n="universityProject3Title"></h3>
+            <p class="lead" data-i18n="universityProject3Lead"></p>
+            <ul data-i18n-list="universityProject3List"></ul>
+            <div class="tag-list">
+                <span class="tag">ERP</span>
+                <span class="tag">Business logic</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Architecture</span>
+            </div>
+        </article>
+    </div>
+
+    <h2 class="section-title" data-i18n="technifuturProjectsTitle"></h2>
+    <div class="grid">
+        <article class="card">
+            <h3 data-i18n="technifuturProject1Title"></h3>
+            <p class="lead" data-i18n="technifuturProject1Lead"></p>
+            <ul data-i18n-list="technifuturProject1List"></ul>
+            <div class="tag-list">
+                <span class="tag">Linux</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Networking</span>
+                <span class="tag">Bash/Python</span>
+            </div>
+        </article>
+    </div>
+
+    <h2 class="section-title" data-i18n="pipelineTitle"></h2>
+    <div class="grid">
+        <div class="card">
+            <h4 data-i18n="pipeline1Title"></h4>
+            <ul data-i18n-list="pipeline1List"></ul>
+        </div>
+        <div class="card">
+            <h4 data-i18n="pipeline2Title"></h4>
+            <ul data-i18n-list="pipeline2List"></ul>
+        </div>
+        <div class="card">
+            <h4 data-i18n="pipeline3Title"></h4>
+            <ul data-i18n-list="pipeline3List"></ul>
+        </div>
+    </div>
+
+    <h2 class="section-title" data-i18n="experienceTitle"></h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h4 data-i18n="exp1Title"></h4>
+            <p class="lead" data-i18n="exp1Lead"></p>
+            <div class="tag-list">
+                <span class="tag">Linux</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">IaC</span>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <h4 data-i18n="exp2Title"></h4>
+            <p class="lead" data-i18n="exp2Lead"></p>
+            <div class="tag-list">
+                <span class="tag">Algorithms</span>
+                <span class="tag">Networking</span>
+                <span class="tag">Software</span>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <h4 data-i18n="exp3Title"></h4>
+            <p class="lead" data-i18n="exp3Lead"></p>
+            <div class="tag-list">
+                <span class="tag">Programming</span>
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Documentation</span>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" data-i18n="contactTitle"></h2>
+    <div class="card">
+        <p class="lead" data-i18n="contactLead"></p>
+        <div class="cta">
+            <a class="btn primary" href="mailto:olexmel@olexhm.dev" data-i18n="contactEmail"></a>
+            <a class="btn" href="https://www.linkedin.com/in/olexhm" target="_blank" rel="noreferrer" data-i18n="contactLinkedIn"></a>
+            <a class="btn" href="https://github.com/olexhm" target="_blank" rel="noreferrer" data-i18n="contactGitHub"></a>
+        </div>
+    </div>
+
+    <footer>
+        <span data-i18n="footer1"></span>
+        <span data-i18n="footer2"></span>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
