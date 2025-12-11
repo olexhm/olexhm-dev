@@ -3,7 +3,7 @@ const translations = {
         heroEyebrow: "Oleksandr · Junior infrastructure/DevOps profile",
         heroSubtitle: "Oleksandr Melnychuk · Junior IT professional focused on infrastructure and automation.",
         heroTitle: "DevOps trainee strengthening Linux, virtualization, and CI/CD foundations.",
-        heroLead: "Based in Liège, Belgium. Solid Windows/Linux setups, virtualization practice, and current security-oriented DevOps formation (Docker, Kubernetes, Jenkins, Ansible, monitoring).",
+        heroLead: "Based in Liège, Belgium. Solid Windows/Linux setups, virtualization practice, and current security-oriented DevOps training (Docker, Kubernetes, Jenkins, Ansible, monitoring).",
         ctaCollaborate: "Email",
         ctaProjects: "View projects",
         stat1Label: "Professional programming diploma — Nova Kakhovka College (EQF 5)",
