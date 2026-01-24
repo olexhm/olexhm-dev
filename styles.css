@@ -16,10 +16,9 @@
 
 body {
     margin: 0;
-    background:
-        radial-gradient(circle at 15% 15%, rgba(57,255,136,0.08), transparent 25%),
-        radial-gradient(circle at 85% 0%, rgba(255,255,255,0.08), transparent 30%),
-        var(--bg);
+    background: radial-gradient(circle at 15% 15%, rgba(57, 255, 136, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.08), transparent 30%),
+    var(--bg);
     color: var(--text);
 }
 
@@ -69,12 +68,12 @@ header {
 }
 
 .hero-card {
-    background: rgba(7,7,10,0.96);
+    background: rgba(7, 7, 10, 0.96);
     border: 1px solid rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
     border-radius: 20px;
     padding: 32px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
 }
 
 .eyebrow {
@@ -128,8 +127,8 @@ p.lead {
 .btn.primary {
     background: linear-gradient(135deg, #39ff88, #0b0f12);
     color: #f7f7f7;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    border: 1px solid rgba(57,255,136,0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(57, 255, 136, 0.6);
 }
 
 .btn:hover {
@@ -172,7 +171,7 @@ p.lead {
     content: "";
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent);
     border-radius: 999px;
 }
 
@@ -182,8 +181,14 @@ p.lead {
     gap: 16px;
 }
 
+@media (min-width: 900px) {
+    .grid.grid-two {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+}
+
 .card {
-    background: rgba(7,7,10,0.96);
+    background: rgba(7, 7, 10, 0.96);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
     padding: 18px;
@@ -259,9 +264,9 @@ code {
     border-radius: 14px;
     display: block;
     color: #e5e5e5;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     overflow-x: auto;
-    font-family: "JetBrains Mono","Fira Code",monospace;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
     position: relative;
     padding-top: 26px;
 }
@@ -277,13 +282,15 @@ code::before {
 }
 
 .ascii-banner {
-    font-family: "JetBrains Mono","Fira Code",monospace;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
     font-size: clamp(8px, 1.5vw, 10px);
     line-height: 1.2;
     color: #39ff88;
     margin: 0 0 12px;
     white-space: pre;
-    text-shadow: 0 0 6px rgba(57,255,136,0.6);
+    text-shadow:
+        0 0 6px rgba(57, 255, 136, 0.7),
+        0 0 14px rgba(57, 255, 136, 0.45);
     overflow: auto;
     max-width: 100%;
     scrollbar-width: none;
@@ -308,7 +315,7 @@ code::before {
     font-family: "JetBrains Mono", monospace;
     font-size: 10px;
     line-height: 1.6;
-    color: rgba(255,255,255,0.03);
+    color: rgba(255, 255, 255, 0.03);
     writing-mode: vertical-rl;
     pointer-events: none;
     z-index: -1;
@@ -321,4 +328,11 @@ footer {
     flex-wrap: wrap;
     color: var(--muted);
     font-size: 14px;
+}
+
+@media (min-width: 900px) {
+    footer {
+        justify-content: center;
+        text-align: center;
+    }
 }
