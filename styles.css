@@ -269,10 +269,11 @@ code {
     font-family: "JetBrains Mono", "Fira Code", monospace;
     position: relative;
     padding-top: 26px;
+    white-space: pre-wrap;
 }
 
 code::before {
-    content: "olexander@portfolio:~$";
+    content: "olex@portfolio:~$";
     position: absolute;
     top: 8px;
     left: 14px;

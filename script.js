@@ -10,7 +10,15 @@ const translations = {
         stat3Label: "Security-oriented DevOps trainee — Technifutur",
         stat4Label: "Languages spoken fluently/comfortably",
         architectureTitle: "Toolkit I'm learning right now",
-        architectureCode: `# system maintenance $ sudo apt update && sudo apt upgrade -y # run my cleanup script $ ./cleanup_daily.sh # check recent rsync jobs from cron $ journalctl -u cron | grep rsync`,
+        architectureCode: `#!/usr/bin/env bash
+set -e
+
+./pve-manager.py clone
+./pve-manager.py start
+./pve-manager.py inventory
+
+ansible all -i inventory.ini -m ping
+ansible-playbook -i inventory.ini -u olex playbook.yml --vault-password-file ~/.ansiblevault.txt`,
         collegeProjectsTitle: "🎓 College Projects (Database & Production Systems)",
         collegeProject1Title: "Production Database System for an Electric Motor Manufacturer",
         collegeProject1Lead: "Relational production database in MS Access to track orders across assembly, testing, painting, packaging, storage, and shipment.",
@@ -52,44 +60,45 @@ const translations = {
             "Included order tracking, production stages, documents, and analytics."
         ],
         technifuturProjectsTitle: "🏭 Technifutur Projects (Automation & Infrastructure)",
-        technifuturProject1Title: "IT Automation & Infrastructure Labs",
-        technifuturProject1Lead: "Hands-on sysadmin labs automating Linux services, networking, and virtualization setups.",
+        technifuturProject1Title: "Technifutur",
+        technifuturProject1Lead: "Practical administration of systems and networks in a virtualized lab: Linux automation with Python, Bash, and Ansible; Proxmox infrastructure (VMs and LXC containers); network configuration (routing, DNS, DHCP); and deployment of application services such as HAProxy, Apache, Nginx, MariaDB, and PostgreSQL.",
         technifuturProject1List: [
-            "Automated system updates, cleanup, monitoring, and backups with Bash/Python.",
-            "Built VMware/KVM labs covering routing, VLANs, DHCP, DNS, and NAT.",
-            "Scripted configuration shortcuts for SSH access and service bootstraps.",
-            "Deployed lightweight services on Linux for realistic practice environments."
+            "Automated Linux administration workflows with Bash, Python, and Ansible playbooks.",
+            "Managed Proxmox virtual infrastructure with VMs and LXC containers for multi-service labs.",
+            "Configured network services including routing, DNS, and DHCP for isolated enterprise-like scenarios.",
+            "Deployed and tested core services: HAProxy, Apache, Nginx, MariaDB, and PostgreSQL."
         ],
         aboutTitle: "About me",
         aboutLead: "Junior IT professional in Liège with EQF 5 + EQF 6 studies, now sharpening DevOps basics and automation habits.",
         aboutBullet1: "Current security-oriented DevOps internship at Technifutur: Docker, Kubernetes, Jenkins, Ansible, Azure, monitoring.",
         aboutBullet2: "Hands-on with Windows/Linux administration, KVM/VMware virtualization, networks, and scripting in Bash/Python.",
-        aboutBullet3: "Documented labs, fast learner, and driving licence B in progress (theory passed).",
+        aboutBullet3: "Documented labs, fast learner, driving licence B in progress (practice).",
         pipelineTitle: "Technical skills",
         pipelineSection2Title: "Networking & tools",
         pipeline1Title: "Systems & virtualization",
         pipeline1List: [
             "Windows 10/11, Windows Server.",
             "Linux (RHEL/Debian derivatives).",
-            "KVM, VMware, Hyper-V, VirtualBox."
+            "Proxmox, VMware, Hyper-V, VirtualBox."
         ],
-        pipeline2Title: "Programming & scripting",
+        pipeline2Title: "Programming & automation",
         pipeline2List: [
             "Python: CLI scripts, PySide6, data handling, logging, algorithms.",
             "Bash: automation, scheduled tasks.",
-            "C#: syntax, OOP, unit testing."
+            "C#: syntax, OOP, unit testing.",
+            "Ansible: IaC, playbooks, configuration management, deployment."
         ],
         pipeline3Title: "Databases",
         pipeline3List: [
             "Data modeling.",
-            "SQL (CRUD, joins, queries).",
-            "MySQL, SQLite, MS Access."
+            "SQL (DDL, DML, DQL, T-SQL).",
+            "SQL Server, MySQL, SQLite, MS Access."
         ],
         pipeline4Title: "Networking & security",
         pipeline4List: [
             "TCP/IP, IP addressing, routing.",
             "DNS, DHCP.",
-            "SSH / Secure Shell."
+            "SSH, SSL, HAProxy, Nginx."
         ],
         pipeline5Title: "Tools",
         pipeline5List: [
@@ -122,7 +131,16 @@ const translations = {
         stat3Label: "Stagiaire DevOps orienté sécurité — Technifutur",
         stat4Label: "Langues parlées couramment/aisément",
         architectureTitle: "Outils que j’apprends en ce moment",
-        architectureCode: "# maintenance du système $ sudo apt update && sudo apt upgrade -y# exécution de mon script de nettoyage $ ./cleanup_daily.sh # vérifier les tâches rsync lancées par cron $ journalctl -u cron | grep rsync",
+        architectureCode: `#!/usr/bin/env bash
+set -e
+
+./pve-manager.py clone
+./pve-manager.py start
+./pve-manager.py inventory
+
+ansible all -i inventory.ini -m ping
+ansible-playbook -i inventory.ini -u olex playbook.yml \\
+  --vault-password-file ~/.ansiblevault.txt`,
         collegeProject1Title: "Base de données de production pour un fabricant de moteurs électriques",
         collegeProjectsTitle: "🎓 Projets de collège (bases de données & production)",
         collegeProject1Lead: "Base relationnelle MS Access pour suivre les commandes à travers assemblage, tests, peinture, emballage, stockage et expédition.",
@@ -164,44 +182,45 @@ const translations = {
             "Suivi des commandes, étapes de production, documents et analytics."
         ],
         technifuturProjectsTitle: "🏭 Projets Technifutur (automatisation & infrastructure)",
-        technifuturProject1Title: "Labs d’automatisation et d’infrastructure IT",
-        technifuturProject1Lead: "Labs sysadmin : automatisation Linux, réseaux et virtualisation en conditions réalistes.",
+        technifuturProject1Title: "Technifutur",
+        technifuturProject1Lead: "Mise en pratique de l’administration système et réseau dans un laboratoire virtualisé : automatisation Linux avec Python, Bash et Ansible, infrastructure Proxmox (VMs et conteneurs LXC), configuration réseau (routage, DNS, DHCP), et déploiement de services applicatifs : HAProxy, Apache, Nginx, MariaDB, PostgreSQL.",
         technifuturProject1List: [
-            "Scripts Bash/Python pour mises à jour, nettoyage, monitoring et sauvegardes.",
-            "Labs VMware/KVM couvrant routage, VLAN, DHCP, DNS et NAT.",
-            "Automatisation des configs SSH et des déploiements de services.",
-            "Déploiement de petits services Linux pour des environnements de pratique."
+            "Automatisation de tâches d’administration Linux avec Bash, Python et des playbooks Ansible.",
+            "Gestion d’infrastructures virtuelles Proxmox avec VMs et conteneurs LXC pour des labs multi-services.",
+            "Configuration de services réseau incluant routage, DNS et DHCP dans des scénarios isolés type entreprise.",
+            "Déploiement et validation de services clés : HAProxy, Apache, Nginx, MariaDB et PostgreSQL."
         ],
         aboutTitle: "À propos",
         aboutLead: "Professionnel IT junior à Liège avec diplômes EQF 5 + EQF 6, qui renforce les bases DevOps et l’automatisation.",
         aboutBullet1: "Stagiaire DevOps orienté sécurité chez Technifutur : Docker, Kubernetes, Jenkins, Ansible, Azure, monitoring.",
         aboutBullet2: "Pratique Windows/Linux, KVM/VMware, réseaux, scripting Bash/Python et documentation des labs.",
-        aboutBullet3: "Labs documentés, apprentissage rapide, permis B en cours (théorie validée).",
+        aboutBullet3: "Labs documentés, apprentissage rapide, permis B en cours (pratique).",
         pipelineTitle: "Compétences techniques",
         pipelineSection2Title: "Réseaux & outils",
         pipeline1Title: "Systèmes & virtualisation",
         pipeline1List: [
             "Windows 10/11, Windows Server.",
             "Linux (dérivés RHEL/Debian).",
-            "KVM, VMware, Hyper-V, VirtualBox."
+            "Proxmox, VMware, Hyper-V, VirtualBox."
         ],
-        pipeline2Title: "Programmation & scripts",
+        pipeline2Title: "Programmation & automatisation",
         pipeline2List: [
             "Python : scripts CLI, PySide6, données, logging, algorithmes.",
             "Bash : automatisation, tâches planifiées.",
-            "C# : syntaxe, POO, tests unitaires."
+            "C# : syntaxe, POO, tests unitaires.",
+            "Ansible : IaC, playbooks, gestion de configuration, déploiement."
         ],
         pipeline3Title: "Bases de données",
         pipeline3List: [
             "Modélisation.",
-            "SQL (CRUD, jointures, requêtes).",
-            "MySQL, SQLite, MS Access."
+            "SQL (DDL, DML, DQL, T-SQL).",
+            "SQL Server, MySQL, SQLite, MS Access."
         ],
         pipeline4Title: "Réseaux & sécurité",
         pipeline4List: [
             "TCP/IP, adressage IP, routage.",
             "DNS, DHCP.",
-            "SSH / Secure Shell."
+            "SSH, SSL, HAProxy, Nginx."
         ],
         pipeline5Title: "Outils",
         pipeline5List: [
