@@ -181,6 +181,12 @@ p.lead {
     gap: 16px;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 @media (min-width: 900px) {
     .grid.grid-two {
         grid-template-columns: repeat(2, minmax(260px, 1fr));
@@ -273,7 +279,7 @@ code {
 }
 
 code::before {
-    content: "olex@portfolio:~$";
+    content: "olex@workstation:~$";
     position: absolute;
     top: 8px;
     left: 14px;
