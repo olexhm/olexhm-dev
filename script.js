@@ -1,27 +1,37 @@
 const translations = {
     en: {
         heroEyebrow: "Oleksandr · Junior infrastructure/DevOps profile",
-        heroTitle: "DevOps apprentice focused on Linux, virtualization, and CI/CD foundations.",
-        heroLead: "Based in Liège, Belgium. Hands-on Windows/Linux administration, virtualization practice, and current security-oriented DevOps training (Docker, Kubernetes, Jenkins, Ansible, monitoring).",
+        heroTitle: "Junior DevOps profile focused on Linux, virtualization, and CI/CD foundations.",
+        heroLead: "Based in Liège, Belgium. Completed security-oriented DevOps training at Technifutur in July 2026, with hands-on experience in Windows/Linux administration, virtualization, Docker, Kubernetes, Jenkins, Ansible, and monitoring.",
         ctaCollaborate: "Email",
         ctaProjects: "View projects",
-        stat1Label: "Professional programming diploma - Professional College, Ukraine (EQF 5)",
-        stat2Label: "Bachelor in Computer Science - Tavrija State Agrotechnological University, Ukraine (EQF 6)",
-        stat3Label: "Security-oriented DevOps apprentice - Technifutur",
-        stat4Label: "Languages spoken fluently/comfortably",
-        architectureTitle: "Toolkit I'm learning right now",
-        architectureCode: `./pve-manager.py clone
+        stat1Label: "Professional programming diploma",
+        stat2Label: "Bachelor in Computer Science",
+        stat3Label: "Security-oriented DevOps training - Technifutur",
+        stat4Label: "Languages spoken fluently",
+        architectureTitle: "Toolkit I'm building with right now",
+        architectureCode: `# infrastructure
+./pve-manager.py clone
 ./pve-manager.py start
-./pve-manager.py inventory
 
-ansible all -i inventory.ini -m ping
-ansible-playbook -i inventory.ini -u olex playbook.yml --vault-password-file ~/.ansiblevault.txt
+ansible-playbook -i inventory.ini site.yml \\
+  --vault-password-file ~/.ansiblevault.txt
 
-ssh docker
+# secrets
+ssh openbao
+bao status
+
+# docker swarm
+ssh manager
+docker node ls
+docker stack deploy -c docker-compose.swarm.yml mlc_stack
 docker service ls
-docker service ps web
-docker service logs web`,
-        collegeProjectsTitle: "🎓 College Projects (Database & Production Systems)",
+docker service ps auth-api
+
+# observability
+curl http://192.168.20.40:9090/-/healthy
+curl http://192.168.20.21:8080/metrics`,
+        collegeProjectsTitle: "College Projects",
         collegeProject1Title: "Production Database System for Electric Motor Manufacturing",
         collegeProject1Lead: "Relational production database in MS Access to track orders across assembly, testing, painting, packaging, storage, and shipment.",
         collegeProject1List: [
@@ -36,7 +46,7 @@ docker service logs web`,
             "Designed role-aware screens for operators and supervisors.",
             "Linked WPF UI to SQLite persistence for day-to-day tracking."
         ],
-        universityProjectsTitle: "🎓 University Projects (SDLC, Web App, ERP MVP)",
+        universityProjectsTitle: "University Projects",
         universityProject1Title: "Software Engineering Lifecycle Project",
         universityProject1Lead: "Academic SDLC project focused on requirements analysis, system design, and project evaluation.",
         universityProject1List: [
@@ -61,8 +71,19 @@ docker service logs web`,
             "Implemented a desktop ERP prototype using Python and Qt.",
             "Included order tracking, production stages, documents, and analytics."
         ],
-        technifuturProjectsTitle: "🏭 Technifutur Projects (Automation, Infrastructure & Web)",
-        technifuturProject1Title: "Linux administration & Automation",
+        universityThesisGithub: "View project on GitHub",
+        technifuturProjectsTitle: "Technifutur Projects",
+        technifuturMlcTitle: "My Little Checker — Functional Raw Material Checking ERP (MVP)",
+        technifuturMlcLead: "Designed, built, and deployed in two weeks by a team of two as the final project of a DevOps training program.",
+        technifuturMlcList: [
+            "Developed a microservice-based ERP using Angular, ASP.NET Core, PostgreSQL, and role-based workflows for raw material validation.",
+            "Configured and automated enterprise DHCP and DDNS networking with Kea DHCP and BIND 9.",
+            "Deployed the application on Docker Swarm using a private registry, Traefik as a reverse proxy, and overlay networking.",
+            "Set up monitoring with Prometheus, Grafana, and PostgreSQL exporters to track application and infrastructure health.",
+            "Provisioned and configured the on-premises Proxmox infrastructure using Bash, Python, and Ansible."
+        ],
+        technifuturMlcGithub: "View project on GitHub",
+        technifuturProject1Title: "Linux administration & automation",
         technifuturProject1Lead: "Practical administration of systems and networks in a virtualized lab: Linux automation with Python, Bash, and Ansible; Proxmox infrastructure (VMs and LXC containers); network configuration (routing, DNS, DHCP); and deployment of application services such as HAProxy, Apache, Nginx, MariaDB, and PostgreSQL.",
         technifuturProject1List: [
             "Automated Linux administration workflows with Bash, Python, and Ansible playbooks.",
@@ -77,25 +98,25 @@ docker service logs web`,
             "Built a Blazor WebAssembly frontend consuming a centralized backend API.",
             "Implemented core features including CRUD operations, external API integrations, and real-time data retrieval."
         ],
+        technifuturApiGithub: "View project on GitHub",
         aboutTitle: "About me",
-        aboutLead: "Junior IT professional in Liège with EQF 5 + EQF 6 studies, now sharpening DevOps basics and automation habits.",
-        aboutBullet1: "Current security-oriented DevOps apprenticeship at Technifutur: Docker, Kubernetes, Jenkins, Ansible, Azure, monitoring.",
-        aboutBullet2: "Hands-on with Windows/Linux administration, KVM/VMware virtualization, networks, and scripting in Bash/Python.",
-        aboutBullet3: "Documented labs, fast learner, driving licence B.",
+        aboutLead: "I'm passionate about infrastructure, automation, and building systems that are reliable and easy to maintain. Based in Liège, I have a Bachelor's degree and completed DevOps training at Technifutur in July 2026, where I developed hands-on experience with Linux, networking, virtualization, containers, CI/CD, and infrastructure automation. I enjoy taking projects from idea to deployment, documenting my work, and continuously improving my skills through practical challenges. Curious, adaptable, and always eager to learn, I enjoy working as part of a team and tackling new technologies.",
         pipelineTitle: "Technical skills",
         pipelineSection2Title: "Networking & tools",
         pipeline1Title: "Systems & Containers",
         pipeline1List: [
             "Windows 10/11, Windows Server.",
-            "Linux: RHEL/Debian derivatives + practice with SUSE and Alpine.",
-            "Proxmox, VMware, Hyper-V, VirtualBox.",
+            "Linux administration: RHEL, Debian, SUSE, Alpine, and systemd.",
+            "Proxmox: VM/LXC lifecycle, cluster management, and virtual networking; VMware, Hyper-V, VirtualBox.",
+            "Hardware assembly and diagnostics; BIOS/UEFI configuration.",
             "Docker: Dockerfiles, networks, Docker Compose, Docker Swarm."
         ],
         pipeline2Title: "Programming & automation",
         pipeline2List: [
             "Python: CLI scripts, PySide6, data handling, logging, algorithms.",
             "Bash: automation, scheduled tasks.",
-            "C#: syntax, OOP, unit testing.",
+            "C#: OOP and xUnit testing; ASP.NET Core, Entity Framework, and REST APIs.",
+            "Angular and TypeScript.",
             "Ansible: IaC, playbooks, configuration management, deployment."
         ],
         pipeline3Title: "Databases",
@@ -107,18 +128,19 @@ docker service logs web`,
         ],
         pipeline4Title: "Networking & security",
         pipeline4List: [
-            "TCP/IP, IP addressing, routing.",
-            "DNS, DHCP.",
-            "SSH, SSL, HAProxy, Nginx, High availability."
+            "TCP/IP, TLS/SSL, IP addressing, routing, and the OSI model.",
+            "DNS and DHCP with BIND 9 and Kea; Linux bridges and troubleshooting.",
+            "SSH; high availability and load balancing with Nginx, HAProxy, and Keepalived."
         ],
         pipeline5Title: "Tools",
         pipeline5List: [
             "JetBrains IDEs, VS Code.",
             "Git, GitHub, GitLab.",
+            "GitLab CI, Jenkins, Trivy.",
             "Microsoft Office suite."
         ],
-        experienceTitle: "Formation & education",
-        exp1Title: "Security-oriented DevOps apprentice - Technifutur (Oct 2025 – Jul 2026)",
+        experienceTitle: "Training & education",
+        exp1Title: "Security-oriented DevOps training - Technifutur (Oct 2025 – Jul 2026)",
         exp1Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, REST APIs, Agile, TDD, and advanced networking.",
         exp2Title: "Bachelor in Computer Science - EQF 6 (Sep 2023 – Jun 2025)",
         exp2Lead: "Tavrija State Agrotechnological University, Ukraine - algorithms, networking, software engineering.",
@@ -128,33 +150,44 @@ docker service logs web`,
         contactLead: "Based in Liège, Belgium - open to internships, apprenticeships, or entry-level DevOps/System roles. Messages preferred.",
         contactEmail: "Send an email",
         contactLinkedIn: "LinkedIn profile",
+        contactGithub: "GitHub profile",
         footer1: "Last updated: 2026 · Focused on infrastructure, automation, and clear documentation.",
         footer2: "Languages: Ukrainian, Russian, English, French"
     },
     fr: {
         heroEyebrow: "Oleksandr · Profil junior infrastructure/DevOps",
-        heroTitle: "Stagiaire DevOps qui consolide Linux, virtualisation et bases CI/CD.",
-        heroLead: "Basé à Liège, Belgique. Maîtrise Windows/Linux, pratique de la virtualisation, et formation DevOps orientée sécurité (Docker, Kubernetes, Jenkins, Ansible, monitoring).",
+        heroTitle: "Profil DevOps junior axé sur Linux, la virtualisation et les bases CI/CD.",
+        heroLead: "Basé à Liège, Belgique. Formation DevOps orientée sécurité terminée chez Technifutur en juillet 2026, avec une expérience pratique de l’administration Windows/Linux, de la virtualisation, de Docker, Kubernetes, Jenkins, Ansible et du monitoring.",
         ctaCollaborate: "Envoyer un email",
         ctaProjects: "Voir les projets",
-        stat1Label: "Diplôme pro en programmation - Collège professionnel, Ukraine (EQF 5)",
-        stat2Label: "Bachelier en informatique - Université agrotechnique de Tavrija, Ukraine (EQF 6)",
-        stat3Label: "Stagiaire DevOps orienté sécurité - Technifutur",
-        stat4Label: "Langues parlées couramment/aisément",
-        architectureTitle: "Outils que j’apprends en ce moment",
-        architectureCode: `./pve-manager.py clone
+        stat1Label: "Diplôme pro en programmation",
+        stat2Label: "Bachelier en informatique",
+        stat3Label: "Formation DevOps orientée sécurité - Technifutur",
+        stat4Label: "Langues parlées couramment",
+        architectureTitle: "Outils avec lesquels je travaille actuellement",
+        architectureCode: `# infrastructure
+./pve-manager.py clone
 ./pve-manager.py start
-./pve-manager.py inventory
 
-ansible all -i inventory.ini -m ping
-ansible-playbook -i inventory.ini -u olex playbook.yml --vault-password-file ~/.ansiblevault.txt
-  
-ssh docker
+ansible-playbook -i inventory.ini site.yml \\
+  --vault-password-file ~/.ansiblevault.txt
+
+# secrets
+ssh openbao
+bao status
+
+# docker swarm
+ssh manager
+docker node ls
+docker stack deploy -c docker-compose.swarm.yml mlc_stack
 docker service ls
-docker service ps web
-docker service logs web`,
+docker service ps auth-api
+
+# observability
+curl http://192.168.20.40:9090/-/healthy
+curl http://192.168.20.21:8080/metrics`,
         collegeProject1Title: "Base de données de production pour un fabricant de moteurs électriques",
-        collegeProjectsTitle: "🎓 Projets de collège (bases de données & production)",
+        collegeProjectsTitle: "Projets de collège",
         collegeProject1Lead: "Base relationnelle MS Access pour suivre les commandes à travers assemblage, tests, peinture, emballage, stockage et expédition.",
         collegeProject1List: [
             "Modélisation de schémas normalisés et requêtes SQL pour les flux de production.",
@@ -168,7 +201,7 @@ docker service logs web`,
             "Écrans adaptés aux rôles pour opérateurs et superviseurs.",
             "Interface WPF reliée à SQLite pour le suivi quotidien."
         ],
-        universityProjectsTitle: "🎓 Projets universitaires (SDLC, appli web, ERP MVP)",
+        universityProjectsTitle: "Projets universitaires",
         universityProject1Title: "Projet du cycle de vie logiciel",
         universityProject1Lead: "Projet académique SDLC axé sur l’analyse des besoins, la conception système et l’évaluation.",
         universityProject1List: [
@@ -193,7 +226,18 @@ docker service logs web`,
             "Prototype ERP desktop implémenté en Python et Qt.",
             "Suivi des commandes, étapes de production, documents et analyses."
         ],
-        technifuturProjectsTitle: "🏭 Projets Technifutur (automatisation & infrastructure)",
+        universityThesisGithub: "Voir le projet sur GitHub",
+        technifuturProjectsTitle: "Projets Technifutur",
+        technifuturMlcTitle: "My Little Checker — ERP MVP de contrôle des matières premières",
+        technifuturMlcLead: "Conçu, développé et déployé en deux semaines par une équipe de deux dans le cadre du projet de fin de formation DevOps.",
+        technifuturMlcList: [
+            "Développement d’un ERP basé sur une architecture microservices avec Angular, ASP.NET Core, PostgreSQL et gestion des rôles.",
+            "Configuration et automatisation d’un réseau d’entreprise avec DHCP et DDNS à l’aide de Kea DHCP et BIND 9.",
+            "Déploiement sur un cluster Docker Swarm avec un registre privé, Traefik comme reverse proxy et des réseaux overlay.",
+            "Mise en place de la supervision avec Prometheus, Grafana et les exporters PostgreSQL pour suivre l’état de l’application et de l’infrastructure.",
+            "Provisionnement et configuration de l’infrastructure Proxmox on-premises à l’aide de scripts Bash, Python et d’Ansible."
+        ],
+        technifuturMlcGithub: "Voir le projet sur GitHub",
         technifuturProject1Title: "Administration Linux & automatisation",
         technifuturProject1Lead: "Mise en pratique de l’administration système et réseau dans un laboratoire virtualisé : automatisation Linux avec Python, Bash et Ansible, infrastructure Proxmox (VMs et conteneurs LXC), configuration réseau (routage, DNS, DHCP), et déploiement de services applicatifs : HAProxy, Apache, Nginx, MariaDB, PostgreSQL.",
         technifuturProject1List: [
@@ -209,25 +253,25 @@ docker service logs web`,
             "Création d’un frontend Blazor WebAssembly consommant une API backend centralisée.",
             "Implémentation des fonctionnalités principales incluant les opérations CRUD, l’intégration d’API externes et la récupération de données en temps réel.",
         ],
+        technifuturApiGithub: "Voir le projet sur GitHub",
         aboutTitle: "À propos",
-        aboutLead: "Professionnel IT junior à Liège avec diplômes EQF 5 + EQF 6, qui renforce les bases DevOps et l’automatisation.",
-        aboutBullet1: "Stagiaire DevOps orienté sécurité chez Technifutur : Docker, Kubernetes, Jenkins, Ansible, Azure, monitoring.",
-        aboutBullet2: "Pratique Windows/Linux, KVM/VMware, réseaux, scripting Bash/Python et documentation des labs.",
-        aboutBullet3: "Labs documentés, apprentissage rapide, permis B.",
+        aboutLead: "Je suis passionné par l’infrastructure, l’automatisation et la création de systèmes fiables et faciles à maintenir. Basé à Liège, je suis titulaire d’un bachelier et j’ai terminé une formation DevOps chez Technifutur en juillet 2026, où j’ai acquis une expérience pratique de Linux, des réseaux, de la virtualisation, des conteneurs, du CI/CD et de l’automatisation de l’infrastructure. J’aime mener des projets de l’idée au déploiement, documenter mon travail et améliorer continuellement mes compétences à travers des défis pratiques. Curieux, adaptable et toujours désireux d’apprendre, j’apprécie le travail en équipe et la découverte de nouvelles technologies.",
         pipelineTitle: "Compétences techniques",
         pipelineSection2Title: "Réseaux & outils",
         pipeline1Title: "Systèmes & Conteneurs",
         pipeline1List: [
             "Windows 10/11, Windows Server.",
-            "Linux : dérivés RHEL/Debian + pratique avec SUSE et Alpine.",
-            "Proxmox, VMware, Hyper-V, VirtualBox.",
+            "Administration Linux : RHEL, Debian, SUSE, Alpine et systemd.",
+            "Proxmox : cycle de vie VM/LXC, gestion de cluster et réseau virtuel ; VMware, Hyper-V, VirtualBox.",
+            "Assemblage et diagnostic matériel ; configuration BIOS/UEFI.",
             "Docker : Dockerfiles, réseaux, Docker Compose, Docker Swarm"
         ],
         pipeline2Title: "Programmation & automatisation",
         pipeline2List: [
             "Python : scripts CLI, PySide6, données, logging, algorithmes.",
             "Bash : automatisation, tâches planifiées.",
-            "C# : syntaxe, POO, tests unitaires.",
+            "C# : POO et tests xUnit ; ASP.NET Core, Entity Framework et API REST.",
+            "Angular et TypeScript.",
             "Ansible : IaC, playbooks, gestion de configuration, déploiement."
         ],
         pipeline3Title: "Bases de données",
@@ -239,27 +283,29 @@ docker service logs web`,
         ],
         pipeline4Title: "Réseaux & sécurité",
         pipeline4List: [
-            "TCP/IP, adressage IP, routage.",
-            "DNS, DHCP.",
-            "SSH, SSL, HAProxy, Nginx, Haute disponibilité."
+            "TCP/IP, TLS/SSL, adressage IP, routage et modèle OSI.",
+            "DNS et DHCP avec BIND 9 et Kea ; ponts Linux et dépannage.",
+            "SSH ; haute disponibilité et répartition de charge avec Nginx, HAProxy et Keepalived."
         ],
         pipeline5Title: "Outils",
         pipeline5List: [
             "JetBrains IDEs, VS Code.",
             "Git, GitHub, GitLab.",
+            "GitLab CI, Jenkins, Trivy.",
             "Suite Microsoft Office."
         ],
         experienceTitle: "Formation & études",
-        exp1Title: "Stagiaire DevOps orienté sécurité - Technifutur (oct 2025 – juil 2026)",
+        exp1Title: "Formation DevOps orientée sécurité - Technifutur (oct. 2025 – juil. 2026)",
         exp1Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, API REST, Agile, TDD et réseau avancé.",
-        exp2Title: "Bachelier en informatique - EQF 6 (sep 2023 – juin 2025)",
+        exp2Title: "Bachelier en informatique - EQF 6 (sept. 2023 – juin 2025)",
         exp2Lead: "Académie agrotechnique d’État de Tavrija, Ukraine - algorithmes, réseaux, ingénierie logicielle.",
-        exp3Title: "Diplôme pro en programmation - EQF 5 (sep 2019 – juin 2023)",
+        exp3Title: "Diplôme pro en programmation - EQF 5 (sept. 2019 – juin 2023)",
         exp3Lead: "Collège professionnel de construction d’instruments, Ukraine - bases de programmation, résolution de problèmes, documentation.",
         contactTitle: "Contact",
         contactLead: "Basé à Liège - ouvert aux stages, alternances ou rôles juniors DevOps/Systèmes. Messages privilégiés.",
         contactEmail: "Envoyer un email",
         contactLinkedIn: "Profil LinkedIn",
+        contactGithub: "Profil GitHub",
         footer1: "Dernière mise à jour : 2026 · Centré sur l’infrastructure, l’automatisation et la documentation claire.",
         footer2: "Langues : ukrainien, russe, anglais, français"
     }

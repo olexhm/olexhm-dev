@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-          content="Portfolio site for Oleksandr Melnychuk, junior infrastructure and DevOps trainee in Liège, Belgium.">
+          content="Portfolio site for Oleksandr Melnychuk, Junior DevOps Engineer in Liège, Belgium.">
     <meta property="og:title" content="Oleksandr Melnychuk | DevOps &amp; Systems Enthusiast">
     <meta property="og:description"
-          content="Junior DevOps trainee focused on Linux, virtualization, and automation with bilingual English/French content.">
+          content="Junior DevOps Engineer focused on Linux, virtualization, and automation with bilingual English/French content.">
     <meta property="og:type" content="website">
     <title>Oleksandr Melnychuk | DevOps & Systems Enthusiast</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="img/icon.svg">
     <link rel="stylesheet" href="styles.css">
@@ -30,7 +30,7 @@
             <p class="lead" data-i18n="heroLead"></p>
             <div class="cta">
                 <a class="btn primary" href="mailto:olexmel@olexhm.dev" data-i18n="ctaCollaborate"></a>
-                <a class="btn" href="#college-projects" data-i18n="ctaProjects"></a>
+                <a class="btn" href="#projects" data-i18n="ctaProjects"></a>
             </div>
             <div class="stat-grid" style="margin-top:20px;">
                 <div class="stat">
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="hero-card">
-<pre class="ascii-banner">
+<pre class="ascii-banner" aria-hidden="true">
  ______   __       ______   __     __   ___   ___   ___ __ __
 /_____/\ /_/\     /_____/\ /__/\ /__/\ /__/\ /__/\ /__//_//_/\
 \:::_ \ \\:\ \    \::::_\/_\ \::\\:.\ \\::\ \\  \ \\::\| \| \ \
@@ -61,16 +61,17 @@
    \:\_\ \ \\:\/___/\\:\____/\\ \ \ \::\ \\: \ \\::\ \\. \  \  \ \
     \_____\/ \_____\/ \_____\/ \_\/  \__\/ \__\/ \::\/ \__\/ \__\/
 </pre>
-            <h3 data-i18n="architectureTitle"></h3>
+            <h2 class="compact-heading" data-i18n="architectureTitle"></h2>
             <code data-i18n="architectureCode"></code>
             <div class="tag-list">
                 <span class="tag">Linux</span>
-                <span class="tag">Bash</span>
-                <span class="tag">Python</span>
                 <span class="tag">Proxmox</span>
+                <span class="tag">Docker</span>
                 <span class="tag">Ansible</span>
-                <span class="tag">Infrastructure automation</span>
+                <span class="tag">Python</span>
+                <span class="tag">Networking</span>
                 <span class="tag">CI/CD</span>
+                <span class="tag">Observability</span>
             </div>
         </div>
     </header>
@@ -78,92 +79,30 @@
     <h2 class="section-title" id="about" data-i18n="aboutTitle"></h2>
     <div class="card about-card">
         <p class="lead" data-i18n="aboutLead"></p>
-        <ul class="about-list">
-            <li data-i18n="aboutBullet1"></li>
-            <li data-i18n="aboutBullet2"></li>
-            <li data-i18n="aboutBullet3"></li>
-        </ul>
     </div>
 
-    <h2 class="section-title" id="college-projects" data-i18n="collegeProjectsTitle"></h2>
-    <div class="grid">
-        <article class="card">
-            <h3 data-i18n="collegeProject1Title"></h3>
-            <p class="lead" data-i18n="collegeProject1Lead"></p>
-            <ul data-i18n-list="collegeProject1List"></ul>
-            <div class="tag-list">
-                <span class="tag">SQL</span>
-                <span class="tag">Relational Databases</span>
-                <span class="tag">MS Access</span>
-                <span class="tag">Production Tracking</span>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="collegeProject2Title"></h3>
-            <p class="lead" data-i18n="collegeProject2Lead"></p>
-            <ul data-i18n-list="collegeProject2List"></ul>
-            <div class="tag-list">
-                <span class="tag">C#</span>
-                <span class="tag">WPF</span>
-                <span class="tag">SQLite</span>
-                <span class="tag">Desktop Application</span>
-                <span class="tag">Production Systems</span>
-            </div>
-        </article>
-    </div>
-
-    <h2 class="section-title" data-i18n="universityProjectsTitle"></h2>
-    <div class="grid">
-        <article class="card">
-            <h3 data-i18n="universityProject1Title"></h3>
-            <p class="lead" data-i18n="universityProject1Lead"></p>
-            <ul data-i18n-list="universityProject1List"></ul>
-            <div class="tag-list">
-                <span class="tag">SDLC</span>
-                <span class="tag">UML</span>
-                <span class="tag">Architecture</span>
-                <span class="tag">Documentation</span>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="universityProject2Title"></h3>
-            <p class="lead" data-i18n="universityProject2Lead"></p>
-            <ul data-i18n-list="universityProject2List"></ul>
-            <div class="tag-list">
-                <span class="tag">Frontend</span>
-                <span class="tag">Backend</span>
-                <span class="tag">UI/UX</span>
-                <span class="tag">MySQL</span>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="universityProject3Title"></h3>
-            <p class="lead" data-i18n="universityProject3Lead"></p>
-            <ul data-i18n-list="universityProject3List"></ul>
-            <div class="tag-list">
-                <span class="tag">ERP</span>
-                <span class="tag">Python</span>
-                <span class="tag">Architecture</span>
-                <span class="tag">UML</span>
-            </div>
-        </article>
-    </div>
-
-    <h2 class="section-title" data-i18n="technifuturProjectsTitle"></h2>
+    <h2 class="section-title" id="projects" data-i18n="technifuturProjectsTitle"></h2>
     <div class="column">
         <article class="card">
-            <h3 data-i18n="technifuturProject1Title"></h3>
-            <p class="lead" data-i18n="technifuturProject1Lead"></p>
-            <ul data-i18n-list="technifuturProject1List"></ul>
+            <h3 data-i18n="technifuturMlcTitle"></h3>
+            <p class="lead" data-i18n="technifuturMlcLead"></p>
+            <ul data-i18n-list="technifuturMlcList"></ul>
             <div class="tag-list">
-                <span class="tag">Linux</span>
+                <span class="tag">Docker Swarm</span>
                 <span class="tag">Ansible</span>
+                <span class="tag">Prometheus</span>
+                <span class="tag">Grafana</span>
                 <span class="tag">Proxmox</span>
-                <span class="tag">Bash/Python</span>
-                <span class="tag">Containers</span>
-                <span class="tag">Web Servers</span>
-                <span class="tag">Proxies</span>
-                <span class="tag">Networking</span>
+                <span class="tag">Angular</span>
+                <span class="tag">ASP.NET Core</span>
+                <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="project-actions">
+                <a class="btn"
+                   href="https://github.com/olexhm/MyLittleChecker"
+                   target="_blank"
+                   rel="noreferrer"
+                   data-i18n="technifuturMlcGithub"></a>
             </div>
         </article>
         <article class="card">
@@ -179,33 +118,126 @@
                 <span class="tag">External APIs</span>
                 <span class="tag">xUnit</span>
             </div>
+            <div class="project-actions">
+                <a class="btn"
+                   href="https://github.com/olexhm/SpaceAgencyLab"
+                   target="_blank"
+                   rel="noreferrer"
+                   data-i18n="technifuturApiGithub"></a>
+            </div>
+        </article>
+        <article class="card">
+            <h3 data-i18n="technifuturProject1Title"></h3>
+            <p class="lead" data-i18n="technifuturProject1Lead"></p>
+            <ul data-i18n-list="technifuturProject1List"></ul>
+            <div class="tag-list">
+                <span class="tag">Linux</span>
+                <span class="tag">Ansible</span>
+                <span class="tag">Proxmox</span>
+                <span class="tag">Bash/Python</span>
+                <span class="tag">Containers</span>
+                <span class="tag">Web Servers</span>
+                <span class="tag">Proxies</span>
+                <span class="tag">Networking</span>
+            </div>
+        </article>
+    </div>
+
+    <h2 class="section-title" data-i18n="universityProjectsTitle"></h2>
+    <div class="grid">
+        <article class="card">
+            <h3 data-i18n="universityProject3Title"></h3>
+            <p class="lead" data-i18n="universityProject3Lead"></p>
+            <ul data-i18n-list="universityProject3List"></ul>
+            <div class="tag-list">
+                <span class="tag">ERP</span>
+                <span class="tag">Python</span>
+                <span class="tag">Architecture</span>
+                <span class="tag">UML</span>
+            </div>
+            <div class="project-actions">
+                <a class="btn"
+                   href="https://github.com/olexhm/ManuFacturerToolbox"
+                   target="_blank"
+                   rel="noreferrer"
+                   data-i18n="universityThesisGithub"></a>
+            </div>
+        </article>
+        <article class="card">
+            <h3 data-i18n="universityProject2Title"></h3>
+            <p class="lead" data-i18n="universityProject2Lead"></p>
+            <ul data-i18n-list="universityProject2List"></ul>
+            <div class="tag-list">
+                <span class="tag">Frontend</span>
+                <span class="tag">Backend</span>
+                <span class="tag">UI/UX</span>
+                <span class="tag">MySQL</span>
+            </div>
+        </article>
+        <article class="card">
+            <h3 data-i18n="universityProject1Title"></h3>
+            <p class="lead" data-i18n="universityProject1Lead"></p>
+            <ul data-i18n-list="universityProject1List"></ul>
+            <div class="tag-list">
+                <span class="tag">SDLC</span>
+                <span class="tag">UML</span>
+                <span class="tag">Architecture</span>
+                <span class="tag">Documentation</span>
+            </div>
+        </article>
+    </div>
+
+    <h2 class="section-title" data-i18n="collegeProjectsTitle"></h2>
+    <div class="grid">
+        <article class="card">
+            <h3 data-i18n="collegeProject2Title"></h3>
+            <p class="lead" data-i18n="collegeProject2Lead"></p>
+            <ul data-i18n-list="collegeProject2List"></ul>
+            <div class="tag-list">
+                <span class="tag">C#</span>
+                <span class="tag">WPF</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Desktop Application</span>
+                <span class="tag">Production Systems</span>
+            </div>
+        </article>
+        <article class="card">
+            <h3 data-i18n="collegeProject1Title"></h3>
+            <p class="lead" data-i18n="collegeProject1Lead"></p>
+            <ul data-i18n-list="collegeProject1List"></ul>
+            <div class="tag-list">
+                <span class="tag">SQL</span>
+                <span class="tag">Relational Databases</span>
+                <span class="tag">MS Access</span>
+                <span class="tag">Production Tracking</span>
+            </div>
         </article>
     </div>
 
     <h2 class="section-title" data-i18n="pipelineTitle"></h2>
-    <div class="grid">
+    <div class="grid skills-grid">
         <div class="card">
-            <h4 data-i18n="pipeline1Title"></h4>
+            <h3 class="skills-heading" data-i18n="pipeline1Title"></h3>
             <ul data-i18n-list="pipeline1List"></ul>
         </div>
         <div class="card">
-            <h4 data-i18n="pipeline2Title"></h4>
+            <h3 class="skills-heading" data-i18n="pipeline2Title"></h3>
             <ul data-i18n-list="pipeline2List"></ul>
         </div>
         <div class="card">
-            <h4 data-i18n="pipeline3Title"></h4>
+            <h3 class="skills-heading" data-i18n="pipeline3Title"></h3>
             <ul data-i18n-list="pipeline3List"></ul>
         </div>
     </div>
 
     <h2 class="section-title" data-i18n="pipelineSection2Title"></h2>
-    <div class="grid grid-two">
+    <div class="grid grid-two skills-grid">
         <div class="card">
-            <h4 data-i18n="pipeline4Title"></h4>
+            <h3 class="skills-heading" data-i18n="pipeline4Title"></h3>
             <ul data-i18n-list="pipeline4List"></ul>
         </div>
         <div class="card">
-            <h4 data-i18n="pipeline5Title"></h4>
+            <h3 class="skills-heading" data-i18n="pipeline5Title"></h3>
             <ul data-i18n-list="pipeline5List"></ul>
         </div>
     </div>
@@ -213,7 +245,7 @@
     <h2 class="section-title" data-i18n="experienceTitle"></h2>
     <div class="timeline">
         <div class="timeline-item">
-            <h4 data-i18n="exp1Title"></h4>
+            <h3 class="compact-heading" data-i18n="exp1Title"></h3>
             <p class="lead" data-i18n="exp1Lead"></p>
             <div class="tag-list">
                 <span class="tag">Linux</span>
@@ -227,7 +259,7 @@
             </div>
         </div>
         <div class="timeline-item">
-            <h4 data-i18n="exp2Title"></h4>
+            <h3 class="compact-heading" data-i18n="exp2Title"></h3>
             <p class="lead" data-i18n="exp2Lead"></p>
             <div class="tag-list">
                 <span class="tag">Programming</span>
@@ -239,7 +271,7 @@
             </div>
         </div>
         <div class="timeline-item">
-            <h4 data-i18n="exp3Title"></h4>
+            <h3 class="compact-heading" data-i18n="exp3Title"></h3>
             <p class="lead" data-i18n="exp3Lead"></p>
             <div class="tag-list">
                 <span class="tag">Databases</span>
@@ -258,6 +290,8 @@
             <a class="btn primary" href="mailto:olexmel@olexhm.dev" data-i18n="contactEmail"></a>
             <a class="btn" href="https://www.linkedin.com/in/olexhm" target="_blank" rel="noreferrer"
                data-i18n="contactLinkedIn"></a>
+            <a class="btn" href="https://github.com/olexhm" target="_blank" rel="noreferrer"
+               data-i18n="contactGithub"></a>
         </div>
     </div>
 
