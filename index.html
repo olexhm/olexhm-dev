@@ -1,305 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Portfolio site for Oleksandr Melnychuk, Junior DevOps Engineer in Liège, Belgium.">
-    <meta property="og:title" content="Oleksandr Melnychuk | DevOps &amp; Systems Enthusiast">
-    <meta property="og:description"
-          content="Junior DevOps Engineer focused on Linux, virtualization, and automation with bilingual English/French content.">
-    <meta property="og:type" content="website">
-    <title>Oleksandr Melnychuk | DevOps & Systems Enthusiast</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="img/icon.svg">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Junior DevOps engineer in Liege, Belgium. Linux, virtualization, containers, and infrastructure automation.">
+<meta name="theme-color" content="#1a1a1a">
+<meta property="og:title" content="olexhm - Oleksandr Melnychuk | DevOps &amp; Systems">
+<meta property="og:description" content="Junior DevOps engineer in Liege, Belgium. Linux, virtualization, containers, and infrastructure automation.">
+<meta property="og:type" content="website">
+<title>olexhm - Oleksandr Melnychuk | DevOps &amp; Systems</title>
+<link rel="icon" type="image/svg+xml" href="img/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,200;0,400;1,200;1,400&display=block">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="layout">
-    <div class="language-bar" role="group" aria-label="Select language">
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="fr">FR</button>
-    </div>
-    <header>
-        <div class="hero-card">
-            <span class="eyebrow" data-i18n="heroEyebrow"></span>
-            <h1 data-i18n="heroTitle"></h1>
-            <p class="lead" data-i18n="heroLead"></p>
-            <div class="cta">
-                <a class="btn primary" href="mailto:olexmel@olexhm.dev" data-i18n="ctaCollaborate"></a>
-                <a class="btn" href="#projects" data-i18n="ctaProjects"></a>
-            </div>
-            <div class="stat-grid" style="margin-top:20px;">
-                <div class="stat">
-                    <div class="value">2019–2023</div>
-                    <div class="label" data-i18n="stat1Label"></div>
-                </div>
-                <div class="stat">
-                    <div class="value">2023–2025</div>
-                    <div class="label" data-i18n="stat2Label"></div>
-                </div>
-                <div class="stat">
-                    <div class="value">2025–2026</div>
-                    <div class="label" data-i18n="stat3Label"></div>
-                </div>
-                <div class="stat">
-                    <div class="value">4</div>
-                    <div class="label" data-i18n="stat4Label"></div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-card">
-<pre class="ascii-banner" aria-hidden="true">
- ______   __       ______   __     __   ___   ___   ___ __ __
+<a class="skip green" href="#content" data-i18n="skipLink">Skip to content</a>
+
+<div class="wrap">
+  <nav class="nav" aria-label="Sections">
+    <a class="green" href="#about">[about]</a>
+    <a class="green" href="#projects">[projects]</a>
+    <a class="green" href="#skills">[skills]</a>
+    <a class="green" href="#experience">[experience]</a>
+    <a class="green" href="#education">[education]</a>
+    <a class="green" href="#contact">[contact]</a>
+    <span class="grey" aria-hidden="true">|</span>
+    <button class="hover purple" id="palette-open" data-i18n-label="paletteLabel"
+            aria-label="Open command palette" data-i18n-title="paletteHint"
+            title="press : or ctrl-k" hidden>[:]</button>
+    <span class="grey" aria-hidden="true">|</span>
+    <button class="hover yellow lang-btn" data-lang="en" aria-label="English">[en]</button>
+    <button class="hover yellow lang-btn" data-lang="fr" aria-label="Français">[fr]</button>
+  </nav>
+
+<header>
+
+  <p class="fetch-command"><span class="green">olexhm@dev</span><span class="grey">:~$</span> ./fetch.sh <span class="fetch-cursor" aria-hidden="true"></span></p>
+
+  <div class="fetch">
+    <pre class="art" aria-hidden="true"> ______   __       ______   __     __   ___   ___   ___ __ __
 /_____/\ /_/\     /_____/\ /__/\ /__/\ /__/\ /__/\ /__//_//_/\
 \:::_ \ \\:\ \    \::::_\/_\ \::\\:.\ \\::\ \\  \ \\::\| \| \ \
  \:\ \ \ \\:\ \    \:\/___/\\_\::_\:_\/ \::\/_\ .\ \\:.      \ \
   \:\ \ \ \\:\ \____\::___\/_ _\/__\_\_/\\:: ___::\ \\:.\-/\  \ \
    \:\_\ \ \\:\/___/\\:\____/\\ \ \ \::\ \\: \ \\::\ \\. \  \  \ \
-    \_____\/ \_____\/ \_____\/ \_\/  \__\/ \__\/ \::\/ \__\/ \__\/
-</pre>
-            <h2 class="compact-heading" data-i18n="architectureTitle"></h2>
-            <code data-i18n="architectureCode"></code>
-            <div class="tag-list">
-                <span class="tag">Linux</span>
-                <span class="tag">Proxmox</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Ansible</span>
-                <span class="tag">Python</span>
-                <span class="tag">Networking</span>
-                <span class="tag">CI/CD</span>
-                <span class="tag">Observability</span>
-            </div>
-        </div>
-    </header>
-
-    <h2 class="section-title" id="about" data-i18n="aboutTitle"></h2>
-    <div class="card about-card">
-        <p class="lead" data-i18n="aboutLead"></p>
+    \_____\/ \_____\/ \_____\/ \_\/  \__\/ \__\/ \::\/ \__\/ \__\/</pre>
+    <div class="fetch-stats">
+      <h1 class="visually-hidden">Oleksandr Melnychuk</h1>
+      <dl class="kv">
+        <dt class="output-core">user</dt><dd class="output-core">olexhm@dev</dd>
+        <dt class="output-core">name</dt><dd class="output-core">Oleksandr Melnychuk</dd>
+        <dt class="output-core">role</dt><dd class="output-core" data-i18n="fetchRole">Junior DevOps Engineer</dd>
+        <dt class="output-core">location</dt><dd class="output-core" data-i18n="fetchLocation">Liège, Belgium</dd>
+        <dt class="output-core">status</dt><dd class="green output-core" data-i18n="fetchAvailability">Open to junior DevOps and infrastructure opportunities</dd>
+        <dt class="group-start output-experience">experience</dt><dd class="group-start output-experience"><span class="grey">2026-now&nbsp;</span> <span data-i18n="fetchExperience1">Research and Development Intern - EVS</span><br>
+          <span class="grey">2025-2026</span> <span data-i18n="fetchExperience2">Security-oriented DevOps training - Technifutur &amp; Cevora</span></dd>
+        <dt class="group-start output-education">education</dt><dd class="group-start output-education"><span class="grey">2023-2025</span> <span data-i18n="fetchEducation1">Bachelor in Computer Science</span><br>
+          <span class="grey">2019-2023</span> <span data-i18n="fetchEducation2">Professional Programming Diploma</span></dd>
+        <dt class="group-start output-personal">languages</dt><dd class="group-start output-personal" data-i18n="fetchLanguages">English / French / Ukrainian / Russian</dd>
+        <dt class="output-personal">hobbies</dt><dd class="output-personal" data-i18n="fetchHobbies">Cycling / video game modding / PC hardware / metal music / guitar</dd>
+        <dt class="group-start output-contact">email</dt><dd class="group-start output-contact"><a class="green" href="mailto:olexmel@olexhm.dev" data-i18n-title="contactEmail" title="Send an email">[olexmel@olexhm.dev]</a></dd>
+        <dt class="output-contact">linkedin</dt><dd class="output-contact"><a class="green" href="https://www.linkedin.com/in/olexhm" target="_blank" rel="noreferrer" data-i18n-title="contactLinkedIn" title="LinkedIn profile">[linkedin.com/in/olexhm]</a></dd>
+        <dt class="output-contact">github</dt><dd class="output-contact"><a class="green" href="https://github.com/olexhm" target="_blank" rel="noreferrer" data-i18n-title="contactGithub" title="GitHub profile">[github.com/olexhm]</a></dd>
+      </dl>
     </div>
+  </div>
 
-    <h2 class="section-title" id="projects" data-i18n="technifuturProjectsTitle"></h2>
-    <div class="column">
-        <article class="card">
-            <h3 data-i18n="technifuturMlcTitle"></h3>
-            <p class="lead" data-i18n="technifuturMlcLead"></p>
-            <ul data-i18n-list="technifuturMlcList"></ul>
-            <div class="tag-list">
-                <span class="tag">Docker Swarm</span>
-                <span class="tag">Ansible</span>
-                <span class="tag">Prometheus</span>
-                <span class="tag">Grafana</span>
-                <span class="tag">Proxmox</span>
-                <span class="tag">Angular</span>
-                <span class="tag">ASP.NET Core</span>
-                <span class="tag">PostgreSQL</span>
-            </div>
-            <div class="project-actions">
-                <a class="btn"
-                   href="https://github.com/olexhm/MyLittleChecker"
-                   target="_blank"
-                   rel="noreferrer"
-                   data-i18n="technifuturMlcGithub"></a>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="technifuturProject2Title"></h3>
-            <p class="lead" data-i18n="technifuturProject2Lead"></p>
-            <ul data-i18n-list="technifuturProject2List"></ul>
-            <div class="tag-list">
-                <span class="tag">C#</span>
-                <span class="tag">ASP.NET</span>
-                <span class="tag">REST API</span>
-                <span class="tag">Web</span>
-                <span class="tag">Databases</span>
-                <span class="tag">External APIs</span>
-                <span class="tag">xUnit</span>
-            </div>
-            <div class="project-actions">
-                <a class="btn"
-                   href="https://github.com/olexhm/SpaceAgencyLab"
-                   target="_blank"
-                   rel="noreferrer"
-                   data-i18n="technifuturApiGithub"></a>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="technifuturProject1Title"></h3>
-            <p class="lead" data-i18n="technifuturProject1Lead"></p>
-            <ul data-i18n-list="technifuturProject1List"></ul>
-            <div class="tag-list">
-                <span class="tag">Linux</span>
-                <span class="tag">Ansible</span>
-                <span class="tag">Proxmox</span>
-                <span class="tag">Bash/Python</span>
-                <span class="tag">Containers</span>
-                <span class="tag">Web Servers</span>
-                <span class="tag">Proxies</span>
-                <span class="tag">Networking</span>
-            </div>
-        </article>
-    </div>
+</header>
 
-    <h2 class="section-title" data-i18n="universityProjectsTitle"></h2>
-    <div class="grid">
-        <article class="card">
-            <h3 data-i18n="universityProject3Title"></h3>
-            <p class="lead" data-i18n="universityProject3Lead"></p>
-            <ul data-i18n-list="universityProject3List"></ul>
-            <div class="tag-list">
-                <span class="tag">ERP</span>
-                <span class="tag">Python</span>
-                <span class="tag">Architecture</span>
-                <span class="tag">UML</span>
-            </div>
-            <div class="project-actions">
-                <a class="btn"
-                   href="https://github.com/olexhm/ManuFacturerToolbox"
-                   target="_blank"
-                   rel="noreferrer"
-                   data-i18n="universityThesisGithub"></a>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="universityProject2Title"></h3>
-            <p class="lead" data-i18n="universityProject2Lead"></p>
-            <ul data-i18n-list="universityProject2List"></ul>
-            <div class="tag-list">
-                <span class="tag">Frontend</span>
-                <span class="tag">Backend</span>
-                <span class="tag">UI/UX</span>
-                <span class="tag">MySQL</span>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="universityProject1Title"></h3>
-            <p class="lead" data-i18n="universityProject1Lead"></p>
-            <ul data-i18n-list="universityProject1List"></ul>
-            <div class="tag-list">
-                <span class="tag">SDLC</span>
-                <span class="tag">UML</span>
-                <span class="tag">Architecture</span>
-                <span class="tag">Documentation</span>
-            </div>
-        </article>
-    </div>
+<main id="content">
 
-    <h2 class="section-title" data-i18n="collegeProjectsTitle"></h2>
-    <div class="grid">
-        <article class="card">
-            <h3 data-i18n="collegeProject2Title"></h3>
-            <p class="lead" data-i18n="collegeProject2Lead"></p>
-            <ul data-i18n-list="collegeProject2List"></ul>
-            <div class="tag-list">
-                <span class="tag">C#</span>
-                <span class="tag">WPF</span>
-                <span class="tag">SQLite</span>
-                <span class="tag">Desktop Application</span>
-                <span class="tag">Production Systems</span>
-            </div>
-        </article>
-        <article class="card">
-            <h3 data-i18n="collegeProject1Title"></h3>
-            <p class="lead" data-i18n="collegeProject1Lead"></p>
-            <ul data-i18n-list="collegeProject1List"></ul>
-            <div class="tag-list">
-                <span class="tag">SQL</span>
-                <span class="tag">Relational Databases</span>
-                <span class="tag">MS Access</span>
-                <span class="tag">Production Tracking</span>
-            </div>
-        </article>
-    </div>
+<section id="about">
+  <h2 class="file"><span class="file-name">about</span></h2>
+  <div class="block">
+  <p class="fg" data-i18n="aboutLead1">I'd best describe myself as a young DevOps Engineer. I've always enjoyed working with technologies and systems, and more specifically, infrastructure, software development, and systems in general. I enjoy analyzing and building reliable systems that serve a real purpose. My interest in technology started with computer hardware, which naturally grew into a passion for infrastructure despite my more software-oriented background.</p>
+  <p class="fg" data-i18n="aboutLead2">I also enjoy exploring best practices around Agile, security, and software engineering, as well as technologies and projects from the Linux, OCI and CNCF ecosystems. I completed my Bachelor's degree in Computer Science and decided to take a DevOps training to polish my stack and link my interests in software and infrastructure together.</p>
+  <p class="fg" data-i18n="aboutLead3">All of this has led me to where I am now, doing an internship at EVS in the R&amp;D department. This has provided me with a chance to get hands-on experience in a real-world environment and to practice the skills I've learned and developed to date. Currently, I am open to new opportunities, as I believe there's always something you can learn, build, and grow as an engineer!</p>
+  </div>
+</section>
 
-    <h2 class="section-title" data-i18n="pipelineTitle"></h2>
-    <div class="grid skills-grid">
-        <div class="card">
-            <h3 class="skills-heading" data-i18n="pipeline1Title"></h3>
-            <ul data-i18n-list="pipeline1List"></ul>
-        </div>
-        <div class="card">
-            <h3 class="skills-heading" data-i18n="pipeline2Title"></h3>
-            <ul data-i18n-list="pipeline2List"></ul>
-        </div>
-        <div class="card">
-            <h3 class="skills-heading" data-i18n="pipeline3Title"></h3>
-            <ul data-i18n-list="pipeline3List"></ul>
-        </div>
-    </div>
+<section id="projects">
+  <h2 class="file" id="technifutur"><span class="file-name">projects/technifutur</span></h2>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="technifuturMlcTitle">My Little Checker</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="technifuturMlcLead">Raw Material Checking ERP (MVP). Designed, built, and deployed in two weeks by a team of two as the final project of a DevOps training program.</p>
+  <ul class="list" data-i18n-list="technifuturMlcList">
+    <li>Developed a microservice-based ERP using Angular, ASP.NET Core, PostgreSQL, and role-based workflows for raw material validation.</li>
+    <li>Configured and automated enterprise DHCP and DDNS networking with Kea DHCP and BIND 9.</li>
+    <li>Deployed the application on Docker Swarm using a private registry, Traefik as a reverse proxy, and overlay networking.</li>
+    <li>Set up monitoring with Prometheus, Grafana, and PostgreSQL exporters to track application and infrastructure health.</li>
+    <li>Provisioned and configured the on-premises Proxmox infrastructure using Bash, Python, and Ansible.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">Docker Swarm / Ansible / Prometheus / Grafana / Proxmox / Angular / ASP.NET Core / PostgreSQL</span></p>
+  <p class="meta"><span class="blue">LINK:</span> <a class="green" href="https://github.com/olexhm/MyLittleChecker" target="_blank" rel="noreferrer">[<span data-i18n="technifuturMlcGithub">View project on GitHub</span>]</a></p>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="technifuturProject2Title">Backend development &amp; API integration</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="technifuturProject2Lead">Design and development of a full-stack application in a lab environment: implementation of a layered architecture with ASP.NET Core Web API, integration of external APIs, database management with SQL Server, and frontend interaction through Blazor WebAssembly.</p>
+  <ul class="list" data-i18n-list="technifuturProject2List">
+    <li>Developed a multi-layered application using ASP.NET Core Web API, Entity Framework, and SQL Server.</li>
+    <li>Built a Blazor WebAssembly frontend consuming a centralized backend API.</li>
+    <li>Implemented core features including CRUD operations, external API integrations, and real-time data retrieval.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">C# / ASP.NET / REST API / Web / Databases / External APIs / xUnit</span></p>
+  <p class="meta"><span class="blue">LINK:</span> <a class="green" href="https://github.com/olexhm/SpaceAgencyLab" target="_blank" rel="noreferrer">[<span data-i18n="technifuturApiGithub">View project on GitHub</span>]</a></p>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="technifuturProject1Title">Linux administration &amp; automation</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="technifuturProject1Lead">Practical administration of systems and networks in a virtualized lab: Linux automation with Python, Bash, and Ansible; Proxmox infrastructure (VMs and LXC containers); network configuration (routing, DNS, DHCP); and deployment of application services such as HAProxy, Apache, Nginx, MariaDB, and PostgreSQL.</p>
+  <ul class="list" data-i18n-list="technifuturProject1List">
+    <li>Automated Linux administration workflows with Bash, Python, and Ansible playbooks.</li>
+    <li>Managed Proxmox virtual infrastructure with VMs and LXC containers for multi-service labs.</li>
+    <li>Configured network services including routing, DNS, and DHCP for isolated enterprise-like scenarios.</li>
+    <li>Deployed and tested core services: HAProxy, Apache, Nginx, MariaDB, and PostgreSQL.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">Linux / Ansible / Proxmox / Bash/Python / Containers / Web Servers / Proxies / Networking</span></p>
+  </div>
+  </article>
+</section>
 
-    <h2 class="section-title" data-i18n="pipelineSection2Title"></h2>
-    <div class="grid grid-two skills-grid">
-        <div class="card">
-            <h3 class="skills-heading" data-i18n="pipeline4Title"></h3>
-            <ul data-i18n-list="pipeline4List"></ul>
-        </div>
-        <div class="card">
-            <h3 class="skills-heading" data-i18n="pipeline5Title"></h3>
-            <ul data-i18n-list="pipeline5List"></ul>
-        </div>
-    </div>
+<section id="university">
+  <h2 class="file"><span class="file-name">projects/university</span></h2>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="universityProject3Title">Thesis Project - ERP System Prototype</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="universityProject3Lead">Graduation project focused on designing and implementing a prototype ERP system for manufacturing process management.</p>
+  <ul class="list" data-i18n-list="universityProject3List">
+    <li>Analyzed production workflows and defined system requirements.</li>
+    <li>Designed architecture, UML models, and relational data schema.</li>
+    <li>Implemented a desktop ERP prototype using Python and Qt.</li>
+    <li>Included order tracking, production stages, documents, and analytics.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">ERP / Python / Architecture / UML</span></p>
+  <p class="meta"><span class="blue">LINK:</span> <a class="green" href="https://github.com/olexhm/ManuFacturerToolbox" target="_blank" rel="noreferrer">[<span data-i18n="universityThesisGithub">View project on GitHub</span>]</a></p>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="universityProject2Title">Web Application Development</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="universityProject2Lead">Full-stack academic web project focused on responsive UI, dynamic content, and database-driven workflows.</p>
+  <ul class="list" data-i18n-list="universityProject2List">
+    <li>Structured frontend with adaptive navigation and interactive components.</li>
+    <li>Backend with PHP form handling, validation, and MySQL persistence.</li>
+    <li>Relational database design with ER modeling and normalization.</li>
+    <li>Responsive layout optimized for desktop and mobile devices.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">Frontend / Backend / UI/UX / MySQL</span></p>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="universityProject1Title">Software Engineering Lifecycle Project</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="universityProject1Lead">Academic SDLC project focused on requirements analysis, system design, and project evaluation.</p>
+  <ul class="list" data-i18n-list="universityProject1List">
+    <li>Analyzed domain and specified functional and non-functional requirements.</li>
+    <li>Produced UML diagrams (use case, activity, component, sequence).</li>
+    <li>Designed system architecture and selected development methodology.</li>
+    <li>Estimated project complexity and cost using Function Point Analysis.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">SDLC / UML / Architecture / Documentation</span></p>
+  </div>
+  </article>
+</section>
 
-    <h2 class="section-title" data-i18n="experienceTitle"></h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <h3 class="compact-heading" data-i18n="exp1Title"></h3>
-            <p class="lead" data-i18n="exp1Lead"></p>
-            <div class="tag-list">
-                <span class="tag">Linux</span>
-                <span class="tag">Networking</span>
-                <span class="tag">Virtualization</span>
-                <span class="tag">Backend</span>
-                <span class="tag">TDD</span>
-                <span class="tag">Containers</span>
-                <span class="tag">IaC</span>
-                <span class="tag">CI/CD</span>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <h3 class="compact-heading" data-i18n="exp2Title"></h3>
-            <p class="lead" data-i18n="exp2Lead"></p>
-            <div class="tag-list">
-                <span class="tag">Programming</span>
-                <span class="tag">Project Planning</span>
-                <span class="tag">Mechanics</span>
-                <span class="tag">System Analysis</span>
-                <span class="tag">Web Development</span>
-                <span class="tag">Desktop Development</span>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <h3 class="compact-heading" data-i18n="exp3Title"></h3>
-            <p class="lead" data-i18n="exp3Lead"></p>
-            <div class="tag-list">
-                <span class="tag">Databases</span>
-                <span class="tag">Desktop Computers</span>
-                <span class="tag">Algorithms</span>
-                <span class="tag">Mathematics</span>
-                <span class="tag">Software Lifecycle</span>
-            </div>
-        </div>
-    </div>
+<section id="college">
+  <h2 class="file"><span class="file-name">projects/college</span></h2>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="collegeProject2Title">Production Control Application for Electric Motor Manufacturing</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="collegeProject2Lead">Desktop production control tool combining a WPF interface with SQLite and role-based access.</p>
+  <ul class="list" data-i18n-list="collegeProject2List">
+    <li>Implemented production stage monitoring, status updates, and validation.</li>
+    <li>Designed role-aware screens for operators and supervisors.</li>
+    <li>Linked WPF UI to SQLite persistence for day-to-day tracking.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">C# / WPF / SQLite / Desktop Application / Production Systems</span></p>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="collegeProject1Title">Production Database System for Electric Motor Manufacturing</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="collegeProject1Lead">Relational production database in MS Access to track orders across assembly, testing, painting, packaging, storage, and shipment.</p>
+  <ul class="list" data-i18n-list="collegeProject1List">
+    <li>Modeled normalized schemas and SQL queries for production workflows.</li>
+    <li>Built user forms to register orders, stages, and inventory movement.</li>
+    <li>Generated structured production reports for tracking and audits.</li>
+  </ul>
+  <p class="meta"><span class="blue">STACK:</span> <span class="orange">SQL / Relational Databases / MS Access / Production Tracking</span></p>
+  </div>
+  </article>
+</section>
 
-    <h2 class="section-title" data-i18n="contactTitle"></h2>
-    <div class="card">
-        <p class="lead" data-i18n="contactLead"></p>
-        <div class="cta">
-            <a class="btn primary" href="mailto:olexmel@olexhm.dev" data-i18n="contactEmail"></a>
-            <a class="btn" href="https://www.linkedin.com/in/olexhm" target="_blank" rel="noreferrer"
-               data-i18n="contactLinkedIn"></a>
-            <a class="btn" href="https://github.com/olexhm" target="_blank" rel="noreferrer"
-               data-i18n="contactGithub"></a>
-        </div>
-    </div>
+<section id="skills">
+  <h2 class="file"><span class="file-name">skills</span></h2>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="pipeline1Title">Systems &amp; Containers</span></h3>
+  <div class="block">
+  <ul class="list" data-i18n-list="pipeline1List">
+    <li>Windows 10/11, Windows Server.</li>
+    <li>Linux administration: RHEL, Debian, SUSE, Alpine, and systemd.</li>
+    <li>Proxmox: VM/LXC lifecycle, cluster management, and virtual networking; VMware, Hyper-V, VirtualBox.</li>
+    <li>Hardware assembly and diagnostics; BIOS/UEFI configuration.</li>
+    <li>Docker: Dockerfiles, networks, Docker Compose, Docker Swarm.</li>
+  </ul>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="pipeline2Title">Programming &amp; automation</span></h3>
+  <div class="block">
+  <ul class="list" data-i18n-list="pipeline2List">
+    <li>Python: CLI scripts, PySide6, data handling, logging, algorithms.</li>
+    <li>Bash: automation, scheduled tasks.</li>
+    <li>C#: OOP and xUnit testing; ASP.NET Core, Entity Framework, and REST APIs.</li>
+    <li>Angular and TypeScript.</li>
+    <li>Ansible: IaC, playbooks, configuration management, deployment.</li>
+  </ul>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="pipeline3Title">Databases</span></h3>
+  <div class="block">
+  <ul class="list" data-i18n-list="pipeline3List">
+    <li>Data modeling.</li>
+    <li>SQL (DDL, DML, DQL, T-SQL).</li>
+    <li>SQL Server, MySQL, SQLite, MS Access.</li>
+    <li>Deploying PostgreSQL, MariaDB, SQL Server.</li>
+  </ul>
+  </div>
+  </article>
+  <article class="stanza" id="network">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="pipeline4Title">Networking &amp; security</span></h3>
+  <div class="block">
+  <ul class="list" data-i18n-list="pipeline4List">
+    <li>TCP/IP, TLS/SSL, IP addressing, routing, and the OSI model.</li>
+    <li>DNS and DHCP with BIND 9 and Kea; Linux bridges and troubleshooting.</li>
+    <li>SSH; high availability and load balancing with Nginx, HAProxy, and Keepalived.</li>
+  </ul>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="pipeline5Title">Tools and Practices</span></h3>
+  <div class="block">
+  <ul class="list" data-i18n-list="pipeline5List">
+    <li>JetBrains IDEs, VS Code.</li>
+    <li>Git and continuous improvement.</li>
+    <li>GitLab CI, TeamCity, Trivy.</li>
+    <li>Agile methodologies.</li>
+  </ul>
+  </div>
+  </article>
+</section>
 
-    <footer>
-        <span data-i18n="footer1"></span>
-        <span data-i18n="footer2"></span>
-    </footer>
+<section id="experience">
+  <h2 class="file"><span class="file-name">experience</span></h2>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="exp1Title">Research and Development Intern - EVS (Aug 2026 – present)</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="exp1Lead">Applied and strengthened my practical skills in DevOps and infrastructure within a modern, fast-evolving R&amp;D environment.</p>
+  <p class="meta"><span class="blue">TOPICS:</span> <span class="orange">DevOps / Infrastructure</span></p>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="exp2Title">Security-oriented DevOps training - Technifutur &amp; Cevora (Oct 2025 – Jul 2026)</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="exp2Lead">Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, REST APIs, Agile, TDD, and advanced networking.</p>
+  <p class="meta"><span class="blue">TOPICS:</span> <span class="orange">Linux / Networking / Virtualization / Backend / TDD / Containers / IaC / CI/CD</span></p>
+  </div>
+  </article>
+</section>
+
+<section id="education">
+  <h2 class="file"><span class="file-name">education</span></h2>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="edu1Title">Bachelor in Computer Science - EQF 6 (Sep 2023 – Jun 2025)</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="edu1Lead">Tavrija State Agrotechnological University, Ukraine - algorithms, networking, software engineering.</p>
+  <p class="meta"><span class="blue">TOPICS:</span> <span class="orange">Programming / Project Planning / Mechanics / System Analysis / Web Development / Desktop Development</span></p>
+  </div>
+  </article>
+  <article class="stanza">
+  <h3><span class="green">INFO:</span> <span class="string" data-i18n="edu2Title">Professional Programming Diploma - EQF 5 (Sep 2019 – Jun 2023)</span></h3>
+  <div class="block">
+  <p class="grey" data-i18n="edu2Lead">Instrument Making Professional Pre-Higher College, Ukraine - programming basics, problem solving, documentation.</p>
+  <p class="meta"><span class="blue">TOPICS:</span> <span class="orange">Databases / Desktop Computers / Algorithms / Mathematics / Software Lifecycle</span></p>
+  </div>
+  </article>
+</section>
+
+<section id="contact">
+  <h2 class="file"><span class="file-name">contact</span></h2>
+  <div class="block">
+  <p class="grey" data-i18n="contactLead">Based in Liège, Belgium - currently an R&amp;D intern at EVS. Open to conversations about DevOps and systems work. Messages preferred.</p>
+  <dl class="kv contact-list">
+    <dt>EMAIL:</dt><dd><a class="green" href="mailto:olexmel@olexhm.dev" data-i18n-title="contactEmail" title="Send an email">[olexmel@olexhm.dev]</a></dd>
+    <dt>LINKEDIN:</dt><dd><a class="green" href="https://www.linkedin.com/in/olexhm" target="_blank" rel="noreferrer" data-i18n-title="contactLinkedIn" title="LinkedIn profile">[linkedin.com/in/olexhm]</a></dd>
+    <dt>GITHUB:</dt><dd><a class="green" href="https://github.com/olexhm" target="_blank" rel="noreferrer" data-i18n-title="contactGithub" title="GitHub profile">[github.com/olexhm]</a></dd>
+  </dl>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="comment output-last"># <span data-i18n="footer1">Last updated: 2026 · Focused on infrastructure, automation, and clear documentation.</span></p>
+  <p class="output-prompt"><span class="green">olexhm@dev</span><span class="grey">:~$</span> <span class="cursor" aria-hidden="true"></span></p>
+</footer>
+
 </div>
-<script src="script.js"></script>
+
+<div class="palette" id="palette" hidden role="dialog" aria-modal="true"
+     data-i18n-label="paletteLabel" aria-label="Open command palette">
+  <div class="palette-box">
+    <div class="palette-input-row">
+      <span class="prompt" aria-hidden="true">&gt;</span>
+      <input id="palette-input" type="text" autocomplete="off" autocorrect="off"
+             spellcheck="false" role="combobox" aria-expanded="false"
+             aria-controls="palette-list" aria-autocomplete="list"
+             data-i18n-placeholder="palettePlaceholder"
+             placeholder="type a command, or `help`"
+             data-i18n-label="paletteLabel" aria-label="Open command palette">
+    </div>
+    <ul id="palette-list" role="listbox" aria-label="Commands"></ul>
+    <p class="palette-empty" id="palette-empty" hidden data-i18n="paletteNoMatch">no matching command</p>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

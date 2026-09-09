@@ -1,36 +1,20 @@
+/*
+ * Translation table. English also ships inline in index.html so the page works
+ * with JavaScript disabled; this file is what swaps it to French.
+ *
+ * Config keys in the markup (name =, stack =, os, host ...) stay English on
+ * purpose - config files are English. Only values and prose live here.
+ */
 const translations = {
     en: {
-        heroEyebrow: "Oleksandr · Junior infrastructure/DevOps profile",
-        heroTitle: "Junior DevOps profile focused on Linux, virtualization, and CI/CD foundations.",
-        heroLead: "Based in Liège, Belgium. Completed security-oriented DevOps training at Technifutur in July 2026, with hands-on experience in Windows/Linux administration, virtualization, Docker, Kubernetes, Jenkins, Ansible, and monitoring.",
-        ctaCollaborate: "Email",
-        ctaProjects: "View projects",
-        stat1Label: "Professional programming diploma",
-        stat2Label: "Bachelor in Computer Science",
-        stat3Label: "Security-oriented DevOps training - Technifutur",
-        stat4Label: "Languages spoken fluently",
-        architectureTitle: "Toolkit I'm building with right now",
-        architectureCode: `# infrastructure
-./pve-manager.py clone
-./pve-manager.py start
-
-ansible-playbook -i inventory.ini site.yml \\
-  --vault-password-file ~/.ansiblevault.txt
-
-# secrets
-ssh openbao
-bao status
-
-# docker swarm
-ssh manager
-docker node ls
-docker stack deploy -c docker-compose.swarm.yml mlc_stack
-docker service ls
-docker service ps auth-api
-
-# observability
-curl http://192.168.20.40:9090/-/healthy
-curl http://192.168.20.21:8080/metrics`,
+        fetchTitle: "Profile summary",
+        fetchExperience1: "Research and Development Intern - EVS",
+        fetchExperience2: "Security-oriented DevOps training - Technifutur & Cevora",
+        fetchEducation1: "Bachelor in Computer Science",
+        fetchEducation2: "Professional Programming Diploma",
+        fetchLanguages: "English / French / Ukrainian / Russian",
+        fetchHobbies: "Cycling / video game modding / PC hardware / metal music / guitar",
+        projectsTitle: "Projects",
         collegeProjectsTitle: "College Projects",
         collegeProject1Title: "Production Database System for Electric Motor Manufacturing",
         collegeProject1Lead: "Relational production database in MS Access to track orders across assembly, testing, painting, packaging, storage, and shipment.",
@@ -72,9 +56,9 @@ curl http://192.168.20.21:8080/metrics`,
             "Included order tracking, production stages, documents, and analytics."
         ],
         universityThesisGithub: "View project on GitHub",
-        technifuturProjectsTitle: "Technifutur Projects",
-        technifuturMlcTitle: "My Little Checker — Functional Raw Material Checking ERP (MVP)",
-        technifuturMlcLead: "Designed, built, and deployed in two weeks by a team of two as the final project of a DevOps training program.",
+        technifuturProjectsTitle: "Technifutur & Cevora Projects",
+        technifuturMlcTitle: "My Little Checker",
+        technifuturMlcLead: "Raw Material Checking ERP (MVP). Designed, built, and deployed in two weeks by a team of two as the final project of a DevOps training program.",
         technifuturMlcList: [
             "Developed a microservice-based ERP using Angular, ASP.NET Core, PostgreSQL, and role-based workflows for raw material validation.",
             "Configured and automated enterprise DHCP and DDNS networking with Kea DHCP and BIND 9.",
@@ -100,7 +84,9 @@ curl http://192.168.20.21:8080/metrics`,
         ],
         technifuturApiGithub: "View project on GitHub",
         aboutTitle: "About me",
-        aboutLead: "I'm passionate about infrastructure, automation, and building systems that are reliable and easy to maintain. Based in Liège, I have a Bachelor's degree and completed DevOps training at Technifutur in July 2026, where I developed hands-on experience with Linux, networking, virtualization, containers, CI/CD, and infrastructure automation. I enjoy taking projects from idea to deployment, documenting my work, and continuously improving my skills through practical challenges. Curious, adaptable, and always eager to learn, I enjoy working as part of a team and tackling new technologies.",
+        aboutLead1: "I'd best describe myself as a young DevOps Engineer. I've always enjoyed working with technologies and systems, and more specifically, infrastructure, software development, and systems in general. I enjoy analyzing and building reliable systems that serve a real purpose. My interest in technology started with computer hardware, which naturally grew into a passion for infrastructure despite my more software-oriented background.",
+        aboutLead2: "I also enjoy exploring best practices around Agile, security, and software engineering, as well as technologies and projects from the Linux, OCI and CNCF ecosystems. I completed my Bachelor's degree in Computer Science and decided to take a DevOps training to polish my stack and link my interests in software and infrastructure together.",
+        aboutLead3: "All of this has led me to where I am now, doing an internship at EVS in the R&D department. This has provided me with a chance to get hands-on experience in a real-world environment and to practice the skills I've learned and developed to date. Currently, I am open to new opportunities, as I believe there's always something you can learn, build, and grow as an engineer!",
         pipelineTitle: "Technical skills",
         pipelineSection2Title: "Networking & tools",
         pipeline1Title: "Systems & Containers",
@@ -132,61 +118,54 @@ curl http://192.168.20.21:8080/metrics`,
             "DNS and DHCP with BIND 9 and Kea; Linux bridges and troubleshooting.",
             "SSH; high availability and load balancing with Nginx, HAProxy, and Keepalived."
         ],
-        pipeline5Title: "Tools",
+        pipeline5Title: "Tools and Practices",
         pipeline5List: [
             "JetBrains IDEs, VS Code.",
-            "Git, GitHub, GitLab.",
-            "GitLab CI, Jenkins, Trivy.",
-            "Microsoft Office suite."
+            "Git and continuous improvement.",
+            "GitLab CI, TeamCity, Trivy.",
+            "Agile methodologies."
         ],
-        experienceTitle: "Training & education",
-        exp1Title: "Security-oriented DevOps training - Technifutur (Oct 2025 – Jul 2026)",
-        exp1Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, REST APIs, Agile, TDD, and advanced networking.",
-        exp2Title: "Bachelor in Computer Science - EQF 6 (Sep 2023 – Jun 2025)",
-        exp2Lead: "Tavrija State Agrotechnological University, Ukraine - algorithms, networking, software engineering.",
-        exp3Title: "Professional Programming Diploma - EQF 5 (Sep 2019 – Jun 2023)",
-        exp3Lead: "Instrument Making Professional Pre-Higher College, Ukraine - programming basics, problem solving, documentation.",
+        experienceTitle: "Experience & training",
+        educationTitle: "Education",
+        exp1Title: "Research and Development Intern - EVS (Aug 2026 – present)",
+        exp1Lead: "Applied and strengthened my practical skills in DevOps and infrastructure within a modern, fast-evolving R&D environment.",
+        exp2Title: "Security-oriented DevOps training - Technifutur & Cevora (Oct 2025 – Jul 2026)",
+        exp2Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, REST APIs, Agile, TDD, and advanced networking.",
+        edu1Title: "Bachelor in Computer Science - EQF 6 (Sep 2023 – Jun 2025)",
+        edu1Lead: "Tavrija State Agrotechnological University, Ukraine - algorithms, networking, software engineering.",
+        edu2Title: "Professional Programming Diploma - EQF 5 (Sep 2019 – Jun 2023)",
+        edu2Lead: "Instrument Making Professional Pre-Higher College, Ukraine - programming basics, problem solving, documentation.",
         contactTitle: "Contact",
-        contactLead: "Based in Liège, Belgium - open to internships, apprenticeships, or entry-level DevOps/System roles. Messages preferred.",
+        contactLead: "Based in Liège, Belgium - currently an R&D intern at EVS. Open to conversations about DevOps and systems work. Messages preferred.",
         contactEmail: "Send an email",
         contactLinkedIn: "LinkedIn profile",
         contactGithub: "GitHub profile",
         footer1: "Last updated: 2026 · Focused on infrastructure, automation, and clear documentation.",
-        footer2: "Languages: Ukrainian, Russian, English, French"
+        docTitle: "olexhm - Oleksandr Melnychuk | DevOps & Systems",
+        docDescription: "Junior DevOps engineer in Liege, Belgium. Linux, virtualization, containers, and infrastructure automation.",
+        fetchLocation: "Liège, Belgium",
+        fetchRole: "Junior DevOps Engineer",
+        fetchAvailability: "Open to junior DevOps and infrastructure opportunities",
+        skipLink: "Skip to content",
+        paletteLabel: "Open command palette",
+        palettePlaceholder: "type a command, or `help`",
+        paletteNoMatch: "no matching command",
+        paletteHint: "press : or ctrl-k",
+        cmdHelp: "List every command",
+        cmdTop: "Back to the top",
+        cmdLang: "Switch language",
+        cmdClose: "Close this palette"
     },
     fr: {
-        heroEyebrow: "Oleksandr · Profil junior infrastructure/DevOps",
-        heroTitle: "Profil DevOps junior axé sur Linux, la virtualisation et les bases CI/CD.",
-        heroLead: "Basé à Liège, Belgique. Formation DevOps orientée sécurité terminée chez Technifutur en juillet 2026, avec une expérience pratique de l’administration Windows/Linux, de la virtualisation, de Docker, Kubernetes, Jenkins, Ansible et du monitoring.",
-        ctaCollaborate: "Envoyer un email",
-        ctaProjects: "Voir les projets",
-        stat1Label: "Diplôme pro en programmation",
-        stat2Label: "Bachelier en informatique",
-        stat3Label: "Formation DevOps orientée sécurité - Technifutur",
-        stat4Label: "Langues parlées couramment",
-        architectureTitle: "Outils avec lesquels je travaille actuellement",
-        architectureCode: `# infrastructure
-./pve-manager.py clone
-./pve-manager.py start
-
-ansible-playbook -i inventory.ini site.yml \\
-  --vault-password-file ~/.ansiblevault.txt
-
-# secrets
-ssh openbao
-bao status
-
-# docker swarm
-ssh manager
-docker node ls
-docker stack deploy -c docker-compose.swarm.yml mlc_stack
-docker service ls
-docker service ps auth-api
-
-# observability
-curl http://192.168.20.40:9090/-/healthy
-curl http://192.168.20.21:8080/metrics`,
+        fetchTitle: "Résumé du profil",
+        fetchExperience1: "Stagiaire en recherche et développement - EVS",
+        fetchExperience2: "Formation DevOps orientée sécurité - Technifutur & Cevora",
+        fetchEducation1: "Bachelier en informatique",
+        fetchEducation2: "Diplôme professionnel en programmation",
+        fetchLanguages: "Anglais / français / ukrainien / russe",
+        fetchHobbies: "Cyclisme / modding de jeux vidéo / matériel PC / metal / guitare",
         collegeProject1Title: "Base de données de production pour un fabricant de moteurs électriques",
+        projectsTitle: "Projets",
         collegeProjectsTitle: "Projets de collège",
         collegeProject1Lead: "Base relationnelle MS Access pour suivre les commandes à travers assemblage, tests, peinture, emballage, stockage et expédition.",
         collegeProject1List: [
@@ -227,14 +206,14 @@ curl http://192.168.20.21:8080/metrics`,
             "Suivi des commandes, étapes de production, documents et analyses."
         ],
         universityThesisGithub: "Voir le projet sur GitHub",
-        technifuturProjectsTitle: "Projets Technifutur",
-        technifuturMlcTitle: "My Little Checker — ERP MVP de contrôle des matières premières",
-        technifuturMlcLead: "Conçu, développé et déployé en deux semaines par une équipe de deux dans le cadre du projet de fin de formation DevOps.",
+        technifuturProjectsTitle: "Projets Technifutur & Cevora",
+        technifuturMlcTitle: "My Little Checker",
+        technifuturMlcLead: "ERP de contrôle des matières premières (MVP). Conçu, développé et déployé en deux semaines par une équipe de deux dans le cadre du projet de fin de formation DevOps.",
         technifuturMlcList: [
             "Développement d’un ERP basé sur une architecture microservices avec Angular, ASP.NET Core, PostgreSQL et gestion des rôles.",
             "Configuration et automatisation d’un réseau d’entreprise avec DHCP et DDNS à l’aide de Kea DHCP et BIND 9.",
             "Déploiement sur un cluster Docker Swarm avec un registre privé, Traefik comme reverse proxy et des réseaux overlay.",
-            "Mise en place de la supervision avec Prometheus, Grafana et les exporters PostgreSQL pour suivre l’état de l’application et de l’infrastructure.",
+            "Mise en place du monitoring avec Prometheus, Grafana et les exporters PostgreSQL pour suivre l’état de l’application et de l’infrastructure.",
             "Provisionnement et configuration de l’infrastructure Proxmox on-premises à l’aide de scripts Bash, Python et d’Ansible."
         ],
         technifuturMlcGithub: "Voir le projet sur GitHub",
@@ -251,11 +230,13 @@ curl http://192.168.20.21:8080/metrics`,
         technifuturProject2List: [
             "Développement d’une application multi-couches utilisant ASP.NET Core Web API, Entity Framework et SQL Server.",
             "Création d’un frontend Blazor WebAssembly consommant une API backend centralisée.",
-            "Implémentation des fonctionnalités principales incluant les opérations CRUD, l’intégration d’API externes et la récupération de données en temps réel.",
+            "Implémentation des fonctionnalités principales incluant les opérations CRUD, l’intégration d’API externes et la récupération de données en temps réel."
         ],
         technifuturApiGithub: "Voir le projet sur GitHub",
         aboutTitle: "À propos",
-        aboutLead: "Je suis passionné par l’infrastructure, l’automatisation et la création de systèmes fiables et faciles à maintenir. Basé à Liège, je suis titulaire d’un bachelier et j’ai terminé une formation DevOps chez Technifutur en juillet 2026, où j’ai acquis une expérience pratique de Linux, des réseaux, de la virtualisation, des conteneurs, du CI/CD et de l’automatisation de l’infrastructure. J’aime mener des projets de l’idée au déploiement, documenter mon travail et améliorer continuellement mes compétences à travers des défis pratiques. Curieux, adaptable et toujours désireux d’apprendre, j’apprécie le travail en équipe et la découverte de nouvelles technologies.",
+        aboutLead1: "Je me décrirais avant tout comme un jeune ingénieur DevOps. J’ai toujours aimé travailler avec les technologies et les systèmes, et plus particulièrement avec l’infrastructure, le développement logiciel et les systèmes en général. J’aime analyser et construire des systèmes fiables qui répondent à un réel besoin. Mon intérêt pour la technologie a commencé avec le matériel informatique, puis s’est naturellement transformé en une passion pour l’infrastructure, malgré un parcours davantage orienté vers le développement logiciel.",
+        aboutLead2: "J’aime également découvrir et approfondir les bonnes pratiques autour de l’Agile, de la sécurité et de l’ingénierie logicielle, ainsi que les technologies et projets issus des écosystèmes Linux, OCI et CNCF. Après avoir obtenu mon bachelier en informatique, j’ai décidé de suivre une formation DevOps afin de consolider mes compétences techniques et de réunir mes intérêts pour le logiciel et l’infrastructure.",
+        aboutLead3: "Tout cela m’a amené là où j’en suis aujourd’hui : en stage chez EVS au sein du département R&D. Cette expérience me donne l’occasion d’acquérir une expérience concrète dans un environnement professionnel et de mettre en pratique les compétences que j’ai apprises et développées jusqu’à présent. Je suis actuellement ouvert à de nouvelles opportunités, car je pense qu’en tant qu’ingénieur, il y a toujours quelque chose de nouveau à apprendre, à construire et une nouvelle occasion d’évoluer !",
         pipelineTitle: "Compétences techniques",
         pipelineSection2Title: "Réseaux & outils",
         pipeline1Title: "Systèmes & Conteneurs",
@@ -287,79 +268,46 @@ curl http://192.168.20.21:8080/metrics`,
             "DNS et DHCP avec BIND 9 et Kea ; ponts Linux et dépannage.",
             "SSH ; haute disponibilité et répartition de charge avec Nginx, HAProxy et Keepalived."
         ],
-        pipeline5Title: "Outils",
+        pipeline5Title: "Outils et pratiques",
         pipeline5List: [
             "JetBrains IDEs, VS Code.",
-            "Git, GitHub, GitLab.",
-            "GitLab CI, Jenkins, Trivy.",
-            "Suite Microsoft Office."
+            "Git et amélioration continue.",
+            "GitLab CI, TeamCity, Trivy.",
+            "Méthodologies Agile."
         ],
-        experienceTitle: "Formation & études",
-        exp1Title: "Formation DevOps orientée sécurité - Technifutur (oct. 2025 – juil. 2026)",
-        exp1Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, API REST, Agile, TDD et réseau avancé.",
-        exp2Title: "Bachelier en informatique - EQF 6 (sept. 2023 – juin 2025)",
-        exp2Lead: "Académie agrotechnique d’État de Tavrija, Ukraine - algorithmes, réseaux, ingénierie logicielle.",
-        exp3Title: "Diplôme pro en programmation - EQF 5 (sept. 2019 – juin 2023)",
-        exp3Lead: "Collège professionnel de construction d’instruments, Ukraine - bases de programmation, résolution de problèmes, documentation.",
+        experienceTitle: "Expérience & formation",
+        educationTitle: "Études",
+        exp1Title: "Stagiaire en recherche et développement - EVS (août 2026 – aujourd’hui)",
+        exp1Lead: "J’ai mis en pratique et renforcé mes compétences en DevOps et infrastructure dans un environnement R&D moderne et en constante évolution.",
+        exp2Title: "Formation DevOps orientée sécurité - Technifutur & Cevora (oct. 2025 – juil. 2026)",
+        exp2Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, API REST, Agile, TDD et réseau avancé.",
+        edu1Title: "Bachelier en informatique - EQF 6 (sept. 2023 – juin 2025)",
+        edu1Lead: "Académie agrotechnique d’État de Tavrija, Ukraine - algorithmes, réseaux, ingénierie logicielle.",
+        edu2Title: "Diplôme pro en programmation - EQF 5 (sept. 2019 – juin 2023)",
+        edu2Lead: "Collège professionnel de construction d’instruments, Ukraine - bases de programmation, résolution de problèmes, documentation.",
         contactTitle: "Contact",
-        contactLead: "Basé à Liège - ouvert aux stages, alternances ou rôles juniors DevOps/Systèmes. Messages privilégiés.",
+        contactLead: "Basé à Liège, Belgique - actuellement stagiaire R&D chez EVS. Ouvert aux échanges autour du DevOps et des systèmes. Messages privilégiés.",
         contactEmail: "Envoyer un email",
         contactLinkedIn: "Profil LinkedIn",
         contactGithub: "Profil GitHub",
         footer1: "Dernière mise à jour : 2026 · Centré sur l’infrastructure, l’automatisation et la documentation claire.",
-        footer2: "Langues : ukrainien, russe, anglais, français"
+        docTitle: "olexhm - Oleksandr Melnychuk | DevOps & Systèmes",
+        docDescription: "Ingénieur DevOps junior à Liège, Belgique. Linux, virtualisation, conteneurs et automatisation d\u2019infrastructure.",
+        fetchLocation: "Liège, Belgique",
+        fetchRole: "Ingénieur DevOps junior",
+        fetchAvailability: "Ouvert aux opportunités junior en DevOps et infrastructure",
+        skipLink: "Aller au contenu",
+        paletteLabel: "Ouvrir la palette de commandes",
+        palettePlaceholder: "tapez une commande, ou `help`",
+        paletteNoMatch: "aucune commande correspondante",
+        paletteHint: "appuyez sur : ou ctrl-k",
+        cmdHelp: "Lister toutes les commandes",
+        cmdTop: "Retour en haut",
+        cmdLang: "Changer de langue",
+        cmdClose: "Fermer la palette"
     }
 };
 
-function applyTranslations(language) {
-    const dict = translations[language] || translations.en;
-
-    document.querySelectorAll('[data-i18n]').forEach((node) => {
-        const key = node.dataset.i18n;
-        if (dict[key]) {
-            node.textContent = dict[key];
-        }
-    });
-
-    document.querySelectorAll('[data-i18n-list]').forEach((node) => {
-        const key = node.dataset.i18nList;
-        const list = dict[key];
-        if (Array.isArray(list)) {
-            node.innerHTML = '';
-            list.forEach((item) => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                node.appendChild(li);
-            });
-        }
-    });
-
-    document.documentElement.lang = language;
-}
-
-function setupLanguageSwitcher() {
-    const buttons = Array.from(document.querySelectorAll('.lang-btn'));
-    const stored = localStorage.getItem('preferredLanguage');
-    const initialLang = stored && translations[stored] ? stored : 'en';
-
-    const activate = (lang) => {
-        buttons.forEach((btn) => {
-            const isActive = btn.dataset.lang === lang;
-            btn.classList.toggle('active', isActive);
-            btn.setAttribute('aria-pressed', isActive);
-        });
-
-        localStorage.setItem('preferredLanguage', lang);
-        applyTranslations(lang);
-    };
-
-    activate(initialLang);
-
-    buttons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            activate(btn.dataset.lang);
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', setupLanguageSwitcher);
+// Node can require() this for the key-parity check; browsers just use the
+// top-level `translations` binding.
+if (typeof module !== 'undefined' && module.exports) { module.exports = translations; }
