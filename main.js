@@ -1,11 +1,3 @@
-/*
- * Language switching + command palette.
- *
- * Both are progressive enhancement. index.html ships the complete English
- * page, and every section is reachable by ordinary anchor links, so with
- * JavaScript disabled the site loses the French toggle and the palette and
- * nothing else.
- */
 (function () {
 	'use strict';
 
@@ -21,15 +13,11 @@
 		}
 	}
 
-	// Deep links must be usable immediately. The boot sequence is only an
-	// enhancement for a normal top-level page opening.
 	if (!reduceMotion.matches && !window.location.hash) {
 		document.documentElement.classList.add('is-booting');
 		bootTimer = window.setTimeout(finishBoot, 1600);
 		window.addEventListener('hashchange', finishBoot, { once: true });
 	}
-
-	/* ------------------------------------------------------------ i18n */
 
 	var currentLang = 'en';
 
@@ -84,10 +72,8 @@
 			btn.setAttribute('aria-pressed', String(on));
 		});
 
-		try { localStorage.setItem(STORAGE_KEY, lang); } catch (err) { /* private mode */ }
+		try { localStorage.setItem(STORAGE_KEY, lang); } catch (err) { }
 
-		// The English copy is already in the markup, so on the very first call
-		// there is nothing to rewrite. Any later switch back does need the pass.
 		if (!(opts && opts.initial && lang === 'en')) {
 			applyTranslations(lang);
 		} else {
@@ -103,8 +89,6 @@
 			return translations[v] ? v : 'en';
 		} catch (err) { return 'en'; }
 	}
-
-	/* -------------------------------------------------- command palette */
 
 	var palette = document.getElementById('palette');
 	var input = document.getElementById('palette-input');
@@ -122,8 +106,6 @@
 		history.replaceState(null, '', '#' + id);
 	}
 
-	// `desc` is a translation key, resolved at render time so the list follows
-	// the current language.
 	var COMMANDS = [
 		{ name: 'about',       desc: 'aboutTitle',              run: function () { goto('about'); } },
 		{ name: 'projects',    desc: 'projectsTitle',          run: function () { goto('projects'); } },
@@ -194,7 +176,6 @@
 	function run(i) {
 		var cmd = matches[i];
 		if (!cmd) { return; }
-		// `keep` commands (help, lang) leave the palette open so you can chain them.
 		if (!cmd.keep) { closePalette(); }
 		cmd.run();
 	}
@@ -220,10 +201,6 @@
 		lastFocus = null;
 	}
 
-	/* ------------------------------------------------ current section */
-
-	// The nav lists the six top-level sections. Project sub-sections mark their
-	// parent, so [projects] stays lit all the way through projects/college.
 	var NAV_PARENT = {
 		university: 'projects',
 		college: 'projects'
@@ -242,7 +219,6 @@
 			var target = id ? (NAV_PARENT[id] || id) : null;
 			Object.keys(links).forEach(function (key) {
 				var on = key === target;
-				// `.selected` is the same inverted cell the language buttons use.
 				links[key].classList.toggle('selected', on);
 				if (on) { links[key].setAttribute('aria-current', 'location'); }
 				else { links[key].removeAttribute('aria-current'); }
@@ -250,27 +226,17 @@
 		}
 
 		function current() {
-			// Reaching the bottom marks the last section. #contact is short enough
-			// that its top never climbs to the line below, so without this it is
-			// the one nav item that could never light up.
 			if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
 				return sections[sections.length - 1].id;
 			}
-			// Otherwise: the last section to have crossed a line near the top of
-			// the viewport. Marking the first section merely *on screen* instead
-			// would keep marking one the reader has already scrolled past, since
-			// two sections share the screen for most of any scroll.
 			var line = window.innerHeight * 0.15;
 			var id = null;
 			for (var i = 0; i < sections.length; i++) {
 				if (sections[i].getBoundingClientRect().top <= line) { id = sections[i].id; }
 			}
-			return id;   // null above #about - the header is not a section
+			return id;
 		}
 
-		// Coalesced to one read per frame. An IntersectionObserver would spare
-		// the listener, but a band thin enough to be accurate can miss a fast
-		// scroll entirely, and no band fires on reaching the bottom of the page.
 		var queued = false;
 		function update() {
 			if (queued) { return; }
@@ -282,8 +248,6 @@
 		window.addEventListener('resize', update, { passive: true });
 		update();
 	}
-
-	/* --------------------------------------------------------- wiring */
 
 	function isTyping(el) {
 		if (!el) { return false; }
@@ -309,7 +273,6 @@
 			else if (ev.key === 'ArrowDown') { ev.preventDefault(); move(1); }
 			else if (ev.key === 'ArrowUp') { ev.preventDefault(); move(-1); }
 			else if (ev.key === 'Enter') { ev.preventDefault(); run(active); }
-			// The box holds one focusable element, so trapping is just this.
 			else if (ev.key === 'Tab') { ev.preventDefault(); }
 		});
 
@@ -321,7 +284,7 @@
 	}
 
 	if (openBtn) {
-		openBtn.hidden = false;   // only useful with JS, so the markup hides it
+		openBtn.hidden = false;
 		openBtn.addEventListener('click', openPalette);
 	}
 

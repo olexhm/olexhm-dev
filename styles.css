@@ -1,24 +1,8 @@
-/*
- * olexhm.dev - terminal / config-file styling.
- *
- * Two rules govern everything here:
- *
- *  1. Spacing is measured in `ch`. On a monospace face 1ch is one character
- *     advance, so the page sits on a character grid without a grid system.
- *     Do not introduce px spacing - it breaks alignment between text and rules.
- *
- *  2. The Google-hosted font has no box-drawing glyphs, block characters, or
- *     most arrows - none of those in the markup. Rules and boxes are CSS
- *     dashed borders. See CLAUDE.md and tools/check-glyphs.sh.
- */
-
 :root {
-	/* ground */
 	--c-bg: #1a1a1a;
 	--c-fg: #e1e1e1;
 	--c-grey: #898989;
 
-	/* accents - green carries the identity */
 	--c-green: #1beb9e;
 	--c-purple: #b462ff;
 	--c-fuschia: #ff45b4;
@@ -41,9 +25,7 @@ body {
 	color: var(--c-fg);
 	font-family: var(--font);
 	font-weight: 400;
-	/* Floor keeps grey text legible on phones; ceiling stops the character
-	   grid outgrowing the centred measure on wide monitors. */
-	font-size: clamp(14px, 1.05vw, 17px);
+	font-size: clamp(16px, 1.15vw, 18px);
 	line-height: var(--line);
 	letter-spacing: 0.01em;
 	-webkit-text-size-adjust: 100%;
@@ -56,9 +38,6 @@ body {
 	padding-block: var(--line);
 }
 
-/* ---------------------------------------------------------------- colour */
-/* Each utility also sets --c-current, so hover states can reference
-   "whatever colour this element already is" without knowing which. */
 .fg      { color: var(--c-fg);      --c-current: var(--c-fg); }
 .grey    { color: var(--c-grey);    --c-current: var(--c-grey); }
 .green   { color: var(--c-green);   --c-current: var(--c-green); }
@@ -70,16 +49,12 @@ body {
 
 ::selection { color: var(--c-bg); background: var(--c-grey); }
 
-/* ----------------------------------------------------------------- links */
 a, .hover {
 	color: var(--c-current, var(--c-green));
 	text-decoration: none;
 	cursor: pointer;
 }
 
-/* The signature effect: hovering inverts the cell. The box-shadow fakes cell
-   padding, which an inline element cannot get from `padding` without the
-   background spilling onto the next line. */
 a:hover, .hover:hover, .selected {
 	color: var(--c-bg);
 	background: var(--c-current, var(--c-green));
@@ -90,7 +65,6 @@ a:hover, .hover:hover, .selected {
 		-0.3ch 0.2ch 0 var(--c-current, var(--c-green));
 }
 
-/* The reference ships `outline:none` with nothing in its place. Do not. */
 a:focus-visible, .hover:focus-visible, button:focus-visible, input:focus-visible {
 	outline: 0.2ch solid var(--c-yellow);
 	outline-offset: 0.2ch;
@@ -117,8 +91,6 @@ button {
 	margin: var(--line);
 }
 
-/* Off-screen but present for screen readers - keeps a page landmark (one
-   h1 naming the person) without printing the name on screen. */
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -131,7 +103,6 @@ button {
 	border: 0;
 }
 
-/* ------------------------------------------------------------- structure */
 h1, h2, h3 {
 	font-size: 1em;
 	font-weight: 400;
@@ -143,8 +114,6 @@ p { margin: 0 0 var(--line); max-width: 78ch; }
 
 section { padding-block-end: var(--line); }
 
-/* Section headings read as bare paths; the dashed rule is the terminal
-   divider. Never a box-drawing character - see the header comment. */
 .file {
 	border-block-end: 0.2ch dashed var(--c-grey);
 	padding-block-end: 0.4ch;
@@ -152,7 +121,6 @@ section { padding-block-end: var(--line); }
 }
 .file-name { color: var(--c-green); }
 
-/* Indented blocks get a dashed gutter instead of a drawn box. */
 .block {
 	border-inline-start: 0.2ch dashed var(--c-grey);
 	padding-inline-start: 2ch;
@@ -162,7 +130,6 @@ section { padding-block-end: var(--line); }
 .stanza { margin-block-end: var(--line); }
 .stanza:last-child { margin-block-end: 0; }
 
-/* Key/value rows. The key column is sized in ch so it stays on grid. */
 .kv { display: grid; grid-template-columns: 12ch 1fr; gap: 0 1ch; }
 .kv dt { color: var(--c-blue); }
 .kv dd { margin: 0; }
@@ -178,7 +145,6 @@ ul.list + .meta { margin-block-start: var(--line); }
 .comment { color: var(--c-grey); }
 .string { color: var(--c-yellow); }
 
-/* -------------------------------------------------------------- fetch */
 .fetch-command { margin-block-end: var(--line); }
 .fetch-cursor {
 	display: none;
@@ -193,17 +159,11 @@ ul.list + .meta { margin-block-start: var(--line); }
 }
 
 .fetch {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0 4ch;
-	align-items: flex-start;
 	margin-block-end: var(--line);
 }
 
 .art {
 	margin: 0;
-	/* Keep the complete wordmark on phones by scaling the decorative art
-	   independently from the readable page text. */
 	font-size: 0.58em;
 	line-height: 1.15;
 	color: var(--c-green);
@@ -216,7 +176,6 @@ ul.list + .meta { margin-block-start: var(--line); }
 }
 
 .fetch-stats {
-	flex: 1 1 30ch;
 	min-width: 0;
 }
 .fetch-stats .kv dt { color: var(--c-purple); }
@@ -252,10 +211,6 @@ ul.list + .meta { margin-block-start: var(--line); }
 	to { visibility: visible; }
 }
 
-/* ------------------------------------------------------------------ nav */
-/* 1ch, not the 2ch used elsewhere: six section links plus the palette and
-   language buttons overrun the measure at 2ch and wrap. A single character
-   between bracketed items reads as terminal-native anyway. */
 .nav {
 	position: sticky;
 	top: 0;
@@ -268,7 +223,6 @@ ul.list + .meta { margin-block-start: var(--line); }
 	background: var(--c-bg);
 }
 
-/* --------------------------------------------------------------- cursor */
 .cursor {
 	display: inline-block;
 	width: 1ch;
@@ -279,7 +233,6 @@ ul.list + .meta { margin-block-start: var(--line); }
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* ------------------------------------------------------- command palette */
 .palette[hidden] { display: none; }
 .palette {
 	position: fixed;
@@ -328,14 +281,12 @@ ul.list + .meta { margin-block-start: var(--line); }
 .cmd-desc { color: var(--c-grey); }
 .palette-empty { color: var(--c-orange); margin-block-start: var(--line); }
 
-/* --------------------------------------------------------------- footer */
 footer {
 	border-block-start: 0.2ch dashed var(--c-grey);
 	padding-block-start: var(--line);
 	color: var(--c-grey);
 }
 
-/* ------------------------------------------------------------- reduced motion */
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
 	.cursor { animation: none; }
@@ -348,9 +299,9 @@ footer {
 	.palette-box { animation: none; }
 }
 
-/* ---------------------------------------------------------------- narrow */
 @media (max-width: 699px) {
 	html { scroll-padding-top: 7ch; }
+	body { font-size: clamp(14px, 2.4vw, 16px); }
 	.nav { justify-content: space-between; }
 	.kv { grid-template-columns: 1fr; }
 	.kv dt { margin-block-start: 0.6ch; }

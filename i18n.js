@@ -1,10 +1,3 @@
-/*
- * Translation table. English also ships inline in index.html so the page works
- * with JavaScript disabled; this file is what swaps it to French.
- *
- * Config keys in the markup (name =, stack =, os, host ...) stay English on
- * purpose - config files are English. Only values and prose live here.
- */
 const translations = {
     en: {
         fetchTitle: "Profile summary",
@@ -135,6 +128,12 @@ const translations = {
         edu1Lead: "Tavrija State Agrotechnological University, Ukraine - algorithms, networking, software engineering.",
         edu2Title: "Professional Programming Diploma - EQF 5 (Sep 2019 – Jun 2023)",
         edu2Lead: "Instrument Making Professional Pre-Higher College, Ukraine - programming basics, problem solving, documentation.",
+        industryReadingTitle: "Industry knowledge",
+        industryReadingList: [
+            "Docker Deep Dive - Nigel Poulton (Leanpub) - read.",
+            "Head First Agile - Andrew Stellman and Jennifer Greene (O’Reilly Media) - read.",
+            "Cloud Native - Boris Scholl, Trent Swanson, and Peter Jausovec (O’Reilly Media) - currently reading."
+        ],
         contactTitle: "Contact",
         contactLead: "Based in Liège, Belgium - currently an R&D intern at EVS. Open to conversations about DevOps and systems work. Messages preferred.",
         contactEmail: "Send an email",
@@ -285,6 +284,12 @@ const translations = {
         edu1Lead: "Académie agrotechnique d’État de Tavrija, Ukraine - algorithmes, réseaux, ingénierie logicielle.",
         edu2Title: "Diplôme pro en programmation - EQF 5 (sept. 2019 – juin 2023)",
         edu2Lead: "Collège professionnel de construction d’instruments, Ukraine - bases de programmation, résolution de problèmes, documentation.",
+        industryReadingTitle: "Connaissances du secteur",
+        industryReadingList: [
+            "Docker Deep Dive - Nigel Poulton (Leanpub) - lu.",
+            "Head First Agile - Andrew Stellman et Jennifer Greene (O’Reilly Media) - lu.",
+            "Cloud Native - Boris Scholl, Trent Swanson et Peter Jausovec (O’Reilly Media) - lecture en cours."
+        ],
         contactTitle: "Contact",
         contactLead: "Basé à Liège, Belgique - actuellement stagiaire R&D chez EVS. Ouvert aux échanges autour du DevOps et des systèmes. Messages privilégiés.",
         contactEmail: "Envoyer un email",
@@ -308,6 +313,4 @@ const translations = {
     }
 };
 
-// Node can require() this for the key-parity check; browsers just use the
-// top-level `translations` binding.
 if (typeof module !== 'undefined' && module.exports) { module.exports = translations; }
