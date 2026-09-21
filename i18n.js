@@ -132,7 +132,8 @@ const translations = {
         industryReadingList: [
             "Docker Deep Dive - Nigel Poulton (Leanpub) - read.",
             "Head First Agile - Andrew Stellman and Jennifer Greene (O’Reilly Media) - read.",
-            "Cloud Native - Boris Scholl, Trent Swanson, and Peter Jausovec (O’Reilly Media) - currently reading."
+            "Cloud Native - Boris Scholl, Trent Swanson, and Peter Jausovec (O’Reilly Media) - read.",
+            "Head First Networking - Al Anderson and Ryan Benedetti (O’Reilly Media) - currently reading."
         ],
         contactTitle: "Contact",
         contactLead: "Based in Liège, Belgium - currently an R&D intern at EVS. Open to conversations about DevOps and systems work. Messages preferred.",
@@ -288,7 +289,8 @@ const translations = {
         industryReadingList: [
             "Docker Deep Dive - Nigel Poulton (Leanpub) - lu.",
             "Head First Agile - Andrew Stellman et Jennifer Greene (O’Reilly Media) - lu.",
-            "Cloud Native - Boris Scholl, Trent Swanson et Peter Jausovec (O’Reilly Media) - lecture en cours."
+            "Cloud Native - Boris Scholl, Trent Swanson et Peter Jausovec (O’Reilly Media) - lu.",
+            "Head First Networking - Al Anderson et Ryan Benedetti (O’Reilly Media) - lecture en cours."
         ],
         contactTitle: "Contact",
         contactLead: "Basé à Liège, Belgique - actuellement stagiaire R&D chez EVS. Ouvert aux échanges autour du DevOps et des systèmes. Messages privilégiés.",
