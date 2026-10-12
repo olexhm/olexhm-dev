@@ -121,7 +121,14 @@ const translations = {
         experienceTitle: "Experience & training",
         educationTitle: "Education",
         exp1Title: "Research and Development Intern - EVS (Aug 2026 – present)",
-        exp1Lead: "Applied and strengthened my practical skills in DevOps and infrastructure within a modern, fast-evolving R&D environment.",
+        exp1Lead: "Working on EVS’s CI infrastructure in an Agile environment, in collaboration with other teams.",
+        exp1List: [
+            "Contributing to the migration of the on-premises CI infrastructure to Proxmox.",
+            "Managing TeamCity pipelines.",
+            "Set up Grafana monitoring and updated the supporting services around the CI.",
+            "Working mainly on Linux systems, with scripting in Bash and Python.",
+            "Getting exposure to current trends in AI-assisted development."
+        ],
         exp2Title: "Security-oriented DevOps training - Technifutur & Cevora (Oct 2025 – Jul 2026)",
         exp2Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, REST APIs, Agile, TDD, and advanced networking.",
         edu1Title: "Bachelor in Computer Science - EQF 6 (Sep 2023 – Jun 2025)",
@@ -133,7 +140,8 @@ const translations = {
             "Docker Deep Dive - Nigel Poulton (Leanpub) - read.",
             "Head First Agile - Andrew Stellman and Jennifer Greene (O’Reilly Media) - read.",
             "Cloud Native - Boris Scholl, Trent Swanson, and Peter Jausovec (O’Reilly Media) - read.",
-            "Head First Networking - Al Anderson and Ryan Benedetti (O’Reilly Media) - currently reading."
+            "Head First Networking - Al Anderson and Ryan Benedetti (O’Reilly Media) - read.",
+            "Computer Networking: A Top-Down Approach - James F. Kurose and Keith W. Ross (Pearson) - currently reading."
         ],
         contactTitle: "Contact",
         contactLead: "Based in Liège, Belgium - currently an R&D intern at EVS. Open to conversations about DevOps and systems work. Messages preferred.",
@@ -278,7 +286,14 @@ const translations = {
         experienceTitle: "Expérience & formation",
         educationTitle: "Études",
         exp1Title: "Stagiaire en recherche et développement - EVS (août 2026 – aujourd’hui)",
-        exp1Lead: "J’ai mis en pratique et renforcé mes compétences en DevOps et infrastructure dans un environnement R&D moderne et en constante évolution.",
+        exp1Lead: "Travail sur l’infrastructure CI d’EVS dans un environnement Agile, en collaboration avec d’autres équipes.",
+        exp1List: [
+            "Participation à la migration de l’infrastructure CI on-premise vers Proxmox.",
+            "Gestion des pipelines TeamCity.",
+            "Mise en place du monitoring Grafana et mise à jour des services annexes autour de la CI.",
+            "Travail principalement sur des systèmes Linux, avec du scripting en Bash et Python.",
+            "Découverte des tendances actuelles du développement assisté par IA."
+        ],
         exp2Title: "Formation DevOps orientée sécurité - Technifutur & Cevora (oct. 2025 – juil. 2026)",
         exp2Lead: "Docker, Kubernetes, Jenkins, Ansible, Azure Cloud, Prometheus/Grafana, API REST, Agile, TDD et réseau avancé.",
         edu1Title: "Bachelier en informatique - EQF 6 (sept. 2023 – juin 2025)",
@@ -290,7 +305,8 @@ const translations = {
             "Docker Deep Dive - Nigel Poulton (Leanpub) - lu.",
             "Head First Agile - Andrew Stellman et Jennifer Greene (O’Reilly Media) - lu.",
             "Cloud Native - Boris Scholl, Trent Swanson et Peter Jausovec (O’Reilly Media) - lu.",
-            "Head First Networking - Al Anderson et Ryan Benedetti (O’Reilly Media) - lecture en cours."
+            "Head First Networking - Al Anderson et Ryan Benedetti (O’Reilly Media) - lu.",
+            "Computer Networking: A Top-Down Approach - James F. Kurose et Keith W. Ross (Pearson) - lecture en cours."
         ],
         contactTitle: "Contact",
         contactLead: "Basé à Liège, Belgique - actuellement stagiaire R&D chez EVS. Ouvert aux échanges autour du DevOps et des systèmes. Messages privilégiés.",
